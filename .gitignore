@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 # Ignore virtual environment
 env_analysis/
 
 # Ignore Jupyter Notebook checkpoints
 .ipynb_checkpoints/
+=======
+# Ignore virtual environment folder
+venv/
+>>>>>>> 292c71df (Add .gitignore and requirements.txt)

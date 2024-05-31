@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 asttokens==2.4.1
 colorama==0.4.6
 comm==0.2.2
@@ -40,3 +41,9 @@ tornado==6.4.1
 traitlets==5.14.3
 tzdata==2024.1
 wcwidth==0.2.13
+=======
+galvani
+pandas
+matplotlib
+numpy
+>>>>>>> 292c71df (Add .gitignore and requirements.txt)

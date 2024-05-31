@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\onyero.ofuzim\Desktop\Research work\Data\venv"
+VIRTUAL_ENV="C:\Users\onyero.ofuzim\Desktop\Research work\Battery_Analysis1\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
