@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Ignore virtual environment
 env_analysis/
 
@@ -6,5 +7,8 @@ env_analysis/
 .ipynb_checkpoints/
 =======
 # Ignore virtual environment folder
+=======
+# Ignore virtual environment folder.
+>>>>>>> 327d02a0 (Remove venv folder)
 venv/
 >>>>>>> 292c71df (Add .gitignore and requirements.txt)
