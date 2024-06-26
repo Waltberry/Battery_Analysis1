@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 asttokens==2.4.1
 colorama==0.4.6
 comm==0.2.2
@@ -35,15 +34,10 @@ python-dateutil==2.9.0.post0
 pytz==2024.1
 pywin32==306
 pyzmq==26.0.3
+scipy==1.14.0
 six==1.16.0
 stack-data==0.6.3
 tornado==6.4.1
 traitlets==5.14.3
 tzdata==2024.1
 wcwidth==0.2.13
-=======
-galvani
-pandas
-matplotlib
-numpy
->>>>>>> 292c71df (Add .gitignore and requirements.txt)
