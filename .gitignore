@@ -7,6 +7,7 @@ env_analysis/
 .ipynb_checkpoints/
 =======
 # Ignore virtual environment folder
+.dist/
 =======
 # Ignore virtual environment folder.
 >>>>>>> 327d02a0 (Remove venv folder)
