@@ -26,6 +26,7 @@ def generalized_exponential_model(t, *params):
     Returns:
     - float or array-like: Value(s) of the model at given t.
     """
+    # Define the generalized exponential model with multiple terms
     # Assuming params = [c1, c2, b2, c3, b3, ..., cn, bn]
     n_terms = (len(params) - 1) // 2
     c1 = params[0]
