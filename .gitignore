@@ -8,6 +8,7 @@ env_analysis/
 =======
 # Ignore virtual environment folder
 .dist/
+Flow Battery Project\src\__pycache__
 =======
 # Ignore virtual environment folder.
 >>>>>>> 327d02a0 (Remove venv folder)
