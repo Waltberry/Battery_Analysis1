@@ -2,6 +2,30 @@ import numpy as np
 from scipy.optimize import curve_fit
 
 def generalized_exponential_model(t, *params):
+    """
+    Generalized Exponential Model:
+    
+    Parameters:
+    - t: Independent variable (time or another independent parameter)
+    - params: Parameters of the model, formatted as [c1, c2, b2, c3, b3, ..., cn, bn]
+             where ci and bi are coefficients for each exponential term
+    
+    Formula:
+    y(t) = c1 + sum(ci * exp(-bi * t) for i in range(n_terms))
+    
+    Explanation:
+    - c1 is the initial value or constant offset.
+    - ci are coefficients for each exponential term.
+    - bi are decay rates for each exponential term.
+    - n_terms is the number of exponential terms, calculated as (len(params) - 1) // 2.
+    
+    Args:
+    - t (float or array-like): Input variable (time or other independent variable).
+    - *params (float): Parameters of the model, should be in the format described.
+    
+    Returns:
+    - float or array-like: Value(s) of the model at given t.
+    """
     # Assuming params = [c1, c2, b2, c3, b3, ..., cn, bn]
     n_terms = (len(params) - 1) // 2
     c1 = params[0]
@@ -13,6 +37,25 @@ def generalized_exponential_model(t, *params):
     return result
 
 def fit_model(times, values, n_terms=2):
+    """
+    Fits a generalized exponential model to the given data using curve fitting.
+
+    Parameters:
+    times : numpy array
+        Array of time values.
+    values : numpy array
+        Array of corresponding data values to fit the model.
+    n_terms : int, optional
+        Number of exponential terms in the model (default is 2).
+
+    Returns:
+    tuple
+        Tuple containing:
+        - numpy array: Original times array.
+        - numpy array: Original values array.
+        - numpy array: Fitted values of the model.
+        - list: Fitted parameters of the model.
+    """
     # Normalize the data to avoid overflow issues
     x_mean = np.mean(times)
     x_std = np.std(times)
