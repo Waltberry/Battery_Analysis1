@@ -1,16 +1,23 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# Ignore virtual environment
-env_analysis/
+# Ignore Python bytecode files
+*.pyc
+*.pyo
 
-# Ignore Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-=======
-# Ignore virtual environment folder
-.dist/
-Flow Battery Project\src\__pycache__
-=======
-# Ignore virtual environment folder.
->>>>>>> 327d02a0 (Remove venv folder)
+# Ignore cache directories
+**/__pycache__/
+
+# Ignore virtual environment folders
+env/
+env_analysis/
 venv/
->>>>>>> 292c71df (Add .gitignore and requirements.txt)
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore folders
+.dist/
+
+# Other ignores
+.DS_Store
+build/
+*.egg-info/
+
