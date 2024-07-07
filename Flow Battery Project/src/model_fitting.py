@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.optimize import curve_fit
 from src.plotting import plot_fitted, print_fitted_params
+from src.cost_function import compute_cost
 
 def generalized_exponential_model(t, *params):
     """
@@ -62,33 +63,26 @@ def fit_model(times, values, n_terms=2, idx=None):
     """
     if len(times) < 2 or len(values) < 2:
         print(f"Not enough data points to fit model for Charging Cycle {idx+1}.")
-        return times, values, None, None
+        return times, values, None, None, False  # Indicate fitting was not successful
     
-    # Remove NaN and infinite values
     valid_indices = np.isfinite(times) & np.isfinite(values)
     times = times[valid_indices]
     values = values[valid_indices]
     
     if len(times) < 2 or len(values) < 2:
         print(f"Not enough valid data points to fit model for Charging Cycle {idx+1} after removing NaNs and infinite values.")
-        return times, values, None, None 
+        return times, values, None, None, False  # Indicate fitting was not successful 
     
     print(f"Fitting model for Charging Cycle {idx+1} with {len(times)} data points.")
-       
+    
     # Normalize the data to avoid overflow issues
     x_mean = np.mean(times)
     x_std = np.std(times)
-    if x_std == 0:
-        x_normalized = times - x_mean
-    else:
-        x_normalized = (times - x_mean) / x_std
+    x_normalized = (times - x_mean) / x_std if x_std != 0 else times - x_mean
 
     y_mean = np.mean(values)
     y_std = np.std(values)
-    if y_std == 0:
-        y_normalized = values - y_mean
-    else:
-        y_normalized = (values - y_mean) / y_std
+    y_normalized = (values - y_mean) / y_std if y_std != 0 else values - y_mean
     
     # Initial guesses for the parameters
     initial_guess = [0] + [1] * n_terms + [0.1] * n_terms
@@ -105,13 +99,13 @@ def fit_model(times, values, n_terms=2, idx=None):
         # Generate fitted values
         y_fitted_normalized = generalized_exponential_model(x_normalized, *fitted_params)
         
-        # Convert fitted values back to original scale
+        
         y_fitted = y_fitted_normalized * y_std + y_mean
         
-        return times, values, y_fitted, fitted_params
+        return times, values, y_fitted, fitted_params, True  # Indicate fitting was successful
     except Exception as e:
         print(f"Could not fit model for Charging Cycle {idx+1}: {e}")
-        return times, values, None, None
+        return times, values, None, None, False  # Indicate fitting was not successful
 
 
 def fit_and_plot_cycle(times, values, idx, n_terms=2):
@@ -139,13 +133,18 @@ def fit_and_plot_cycle(times, values, idx, n_terms=2):
     """
     try:
         # Use the fit_model function to fit the model and get fitted values and parameters
-        times, values, y_fitted, fitted_params = fit_model(times, values, n_terms, idx=idx)
-        if y_fitted is not None:
+        times, values, y_fitted, fitted_params, success = fit_model(times, values, n_terms, idx=idx)
+        if success:
             # Plot the data and the fitted model
             plot_fitted(times, values, y_fitted, idx)
             # Print the fitted parameters
             print_fitted_params(fitted_params, n_terms)
-        return times, values, y_fitted, fitted_params
+            
+            # Calculate and print the cost
+            cost = compute_cost(values, y_fitted)
+            print(f"Cost for Charging Cycle {idx+1}: {cost}")
+        
+        return times, values, y_fitted, fitted_params, success
     except Exception as e:
         print(f"Could not fit model for Charging Cycle {idx+1}: {e}")
-        return times, values, None, None
+        return times, values, None, None, False
