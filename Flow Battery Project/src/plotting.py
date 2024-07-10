@@ -58,3 +58,19 @@ def print_fitted_params(fitted_params, n_terms=3):
     param_labels = ['c1'] + [f'c{i+2}' for i in range(n_terms)] + [f'b{i+2}' for i in range(n_terms)]
     for label, param in zip(param_labels, fitted_params):
         print(f'{label} = {param:.4f}')
+
+def plot_cost(costs):
+    """
+    Plots the costs of each charging cycle.
+
+    Parameters:
+    costs : list
+        List of costs for each charging cycle.
+    """
+    plt.figure(figsize=(10, 6))
+    plt.plot(costs, marker='o', linestyle='-')
+    plt.title('Cost of Each Charging Cycle')
+    plt.xlabel('Charging Cycle Index')
+    plt.ylabel('Cost')
+    plt.grid(True)
+    plt.show()
