@@ -18,3 +18,6 @@ def compute_cost(y_actual, y_predicted):
     squared_error = np.square(error)
     mse = np.mean(squared_error)
     return mse
+
+
+## Average percent error function
