@@ -1,5 +1,40 @@
 import numpy as np
 
+def discrete_time_system_identification(u, y, order):
+    """
+    Discrete Time System Identification using least squares method.
+
+    Parameters:
+    u : numpy array
+        Array of input values.
+    y : numpy array
+        Array of output values.
+    order : int
+        Order of the system.
+
+    Returns:
+    theta : numpy array
+        Estimated parameters of the system.
+    Phi : numpy array
+        The constructed data matrix.
+    """
+    n_samples = len(u)
+    
+    # Construct the Phi matrix
+    Phi = np.zeros((n_samples - order, 2 * order + 1))
+    for i in range(order, n_samples):
+        Phi[i - order, :order] = u[i:i-order:-1]
+        Phi[i - order, order:2*order] = -y[i-1:i-order-1:-1]
+        Phi[i - order, -1] = 1
+    
+    # Construct the Y vector
+    Y = y[order:]
+    
+    # Calculate theta using the normal equation
+    theta = np.linalg.inv(Phi.T @ Phi) @ Phi.T @ Y
+    
+    return theta, Phi, Y
+
 def generalized_exponential_model(t, *params):
     """
     Generalized Exponential Model:
@@ -25,8 +60,6 @@ def generalized_exponential_model(t, *params):
     Returns:
     - float or array-like: Value(s) of the model at given t.
     """
-    # Define the generalized exponential model with multiple terms
-    # Assuming params = [c1, c2, b2, c3, b3, ..., cn, bn]
     n_terms = (len(params) - 1) // 2
     c1 = params[0]
     result = c1
