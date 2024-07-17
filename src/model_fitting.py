@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.optimize import curve_fit
 from src.plotting import plot_fitted, print_fitted_params
-from src.cost_function import compute_cost
+from src.cost_function import compute_cost, average_percent_error
 from src.model import generalized_exponential_model
 
 def fit_model(times, values, n_terms=2, idx=None):
@@ -108,6 +108,10 @@ def fit_and_plot_cycle(times, values, idx, n_terms=2):
             # Calculate and print the cost
             cost = compute_cost(values, y_fitted)
             print(f"Cost for Charging Cycle {idx+1}: {cost}")
+            
+            # Calculate and print the average percent error
+            ape = average_percent_error(values, y_fitted)
+            print(f"average percent error for Charging Cycle {idx+1}: {ape}")
         
         return times, values, y_fitted, fitted_params, success
     except Exception as e:
