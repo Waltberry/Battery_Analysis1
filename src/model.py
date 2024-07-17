@@ -1,7 +1,5 @@
 import numpy as np
 
-import numpy as np
-
 def discrete_time_system_identification(u, y, order):
     """
     Discrete Time System Identification using least squares method.
@@ -99,10 +97,6 @@ def generalized_exponential_model(t, *params):
         bi = params[2 + 2 * i]
         result += ci * np.exp(-bi * t)
     return result
-
-import numpy as np
-
-import numpy as np
 
 def complexpoles_exponential_model(t, *params):
     """
