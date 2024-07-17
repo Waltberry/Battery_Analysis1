@@ -23,8 +23,12 @@ def discrete_time_system_identification(u, y, order):
     # Construct the Phi matrix
     Phi = np.zeros((n_samples - order, 2 * order + 1))
     for i in range(order, n_samples):
-        Phi[i - order, :order] = u[i:i-order:-1]
-        Phi[i - order, order:2*order] = -y[i-1:i-order-1:-1]
+        u_slice = u[i-order:i][::-1]
+        y_slice = -y[i-1:i-order-1:-1]
+        print(f"i: {i}, u_slice: {u_slice}, y_slice: {y_slice}")
+        
+        Phi[i - order, :order] = u_slice
+        Phi[i - order, order:2*order] = y_slice
         Phi[i - order, -1] = 1
     
     # Construct the Y vector
