@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.stats import linregress
 
-def discrete_time_system_identification(u, y, order):
+def arx_model(u, y, order):
     """
     Discrete Time System Identification using least squares method.
 
@@ -44,17 +44,17 @@ def discrete_time_system_identification(u, y, order):
     n_samples = len(u)
     
     # Construct the Phi matrix
-    Phi = np.zeros((n_samples - order, 2 * order + 1))
+    Phi = np.zeros((n_samples - order, 2 * order))
     for i in range(order, n_samples):
-        u_slice = u[i-order:i][::-1] if i-order >= 0 else np.zeros(order)
-        y_slice = -y[i-1:i-order-1:-1] if i-1-(i-order-1) >= 0 else np.zeros(order)
+        u_slice = np.flip(u[i-order+1:i+1])
+        y_slice = np.flip(-y[i-order:i]) 
         
         # Debug prints to verify the slices
-        print(f"i: {i}, u_slice: {u_slice}, y_slice: {y_slice}")
+        # print(f"i: {i}, u_slice: {u_slice}, y_slice: {y_slice}")
 
         Phi[i - order, :order] = u_slice
         Phi[i - order, order:2*order] = y_slice
-        Phi[i - order, -1] = 1
+        # Phi[i - order, -1] = 1
     
     # Construct the Y vector
     Y = y[order:]
