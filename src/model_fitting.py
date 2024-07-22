@@ -4,7 +4,7 @@ from src.plotting import plot_fitted, print_fitted_params
 from src.cost_function import compute_cost, average_percent_error
 from src.model import generalized_exponential_model
 
-def fit_model(times, values, n_terms=2, idx=None):
+def fit_model(times, values, n_terms=1, idx=None):
     """
     Fits a generalized exponential model to the given data using curve fitting.
 
@@ -53,8 +53,8 @@ def fit_model(times, values, n_terms=2, idx=None):
     initial_guess = [0] + [1] * n_terms + [0.1] * n_terms
     
     # Define bounds for the parameters to avoid overflow issues
-    lower_bounds = [-np.inf] + [-np.inf] * n_terms + [0] * n_terms
-    upper_bounds = [np.inf] + [np.inf] * n_terms + [np.inf] * n_terms
+    lower_bounds = [-np.inf] + [-np.inf] * n_terms + [0] * n_terms #
+    upper_bounds = [np.inf] + [np.inf] * n_terms + [np.inf] * n_terms #
     
     try:
         # Fit the model
@@ -73,7 +73,7 @@ def fit_model(times, values, n_terms=2, idx=None):
         return times, values, None, None, False  # Indicate fitting was not successful
 
 
-def fit_and_plot_cycle(times, values, idx, n_terms=2):
+def fit_and_plot_cycle(times, values, idx, n_terms=1):
     """
     Fits a generalized exponential model to the given data using fit_model,
     plots the data and the fitted model, and prints the fitted parameters.

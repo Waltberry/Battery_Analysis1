@@ -1,4 +1,5 @@
 import numpy as np
+from scipy.stats import linregress
 
 def discrete_time_system_identification(u, y, order):
     """
@@ -136,4 +137,9 @@ def complexpoles_exponential_model(t, *params):
         result += 2 * a * np.exp(-alpha * t) * np.cos(beta * t)
         result += 2 * b * np.exp(-alpha * t) * np.sin(beta * t)
     return result
+
+# Fit straight-line models
+def fit_straight_line(x, y):
+    slope, intercept, r_value, p_value, std_err = linregress(x, y)
+    return slope, intercept
 
