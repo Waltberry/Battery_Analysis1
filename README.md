@@ -1,13 +1,3 @@
 # Battery Analysis
 
-![Build Status](https://travis-ci.com/Waltberry/Battery_Analysis1.svg?branch=main)
-
-Description...
-
-## Installation
-
-installing...
-
-## Usage
-
-using...
+[![Build Status](https://app.travis-ci.com/Waltberry/Battery_Analysis1.svg?token=qHcVGDis5ppoYaDMcDBz&branch=main)](https://app.travis-ci.com/Waltberry/Battery_Analysis1)
