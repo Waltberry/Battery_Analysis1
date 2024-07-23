@@ -2,9 +2,14 @@ import os
 import pandas as pd
 import re
 
+TIME_COLUMN_NAME = 'Time (HH:mm:ss.SSS)'
+
 def load_excel(file_name):
     """
-    Load an Excel file from the data folder.
+    Load an Excel file from the 'Flow Battery Project' data folder.
+
+    This function constructs the full file path to an Excel file located in the 
+    'Flow Battery Project' data folder and loads it into a pandas ExcelFile object.
 
     Parameters:
     file_name (str): Name of the Excel file to load.
@@ -28,14 +33,18 @@ def load_excel(file_name):
 
 def load_csv_files(file_names, sub_folder):
     """
-    Load and process multiple CSV files from the specified subfolder.
+    Load and process multiple CSV files from the specified subfolder within the 'Hydrogen Project' data folder.
+
+    This function constructs the full file path for each CSV file in the specified
+    subfolder, reads the files into DataFrames, processes them (e.g., renaming columns, 
+    cleaning data), and returns a dictionary of processed DataFrames.
 
     Parameters:
     file_names (list): List of CSV file names to load.
-    sub_folder (str): Subfolder within the data folder where the files are located.
+    sub_folder (str): Subfolder within the 'Hydrogen Project' data folder where the files are located.
 
     Returns:
-    dict: Dictionary with file names as keys and processed DataFrames as values.
+    dict: Dictionary with file names as keys (processed) and DataFrames as values.
     """
     # Get the absolute path of the project's root directory
     project_root = os.path.dirname(os.path.dirname(__file__))
@@ -49,10 +58,10 @@ def load_csv_files(file_names, sub_folder):
     # Function to clean and rename the DataFrame columns
     def process_dataframe(df, file_name):
         # Rename the columns
-        df.columns = ['Time (HH:mm:ss.SSS)', 'Channel', 'CH', 'unnamed2', 'V', 'unnamed3', 'A', 'unnamed4']
-        # Remove the brackets in 'Channel' and 'Time (HH:mm:ss.SSS)' columns
+        df.columns = [TIME_COLUMN_NAME, 'Channel', 'CH', 'unnamed2', 'V', 'unnamed3', 'A', 'unnamed4']
+        # Remove the brackets in 'Channel' and TIME_COLUMN_NAME columns
         df['Channel'] = df['Channel'].str.strip('[]')
-        df['Time (HH:mm:ss.SSS)'] = df['Time (HH:mm:ss.SSS)'].str.strip('()')
+        df[TIME_COLUMN_NAME] = df[TIME_COLUMN_NAME].str.strip('()')
         # Discard the unnecessary columns
         df = df.drop(columns=['unnamed2', 'unnamed3', 'unnamed4'])
         # Extract the relevant part of the file name for 'Data Source'

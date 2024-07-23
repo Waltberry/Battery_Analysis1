@@ -25,21 +25,23 @@ def average_percent_error(actual, predicted):
     Calculate the average percent error between actual and predicted values.
     
     Parameters:
-    actual (array-like): Array of actual values.
-    predicted (array-like): Array of predicted values.
+    actual : numpy array
+        Array of actual values.
+    predicted : numpy array
+        Array of predicted values.
     
     Returns:
-    float: Average percent error.
+    float
+        Average percent error.
     """
-    # # Ensure the input arrays are numpy arrays
-    # actual = np.array(actual)
-    # predicted = np.array(predicted)
+    # Ensure the input arrays are numpy arrays
+    actual = np.array(actual)
+    predicted = np.array(predicted)
     
     # Calculate the absolute percent error for each point
     percent_errors = np.abs((actual - predicted) / actual) * 100
     
     # Calculate the average percent error
-    average_percent_error = np.mean(percent_errors)
+    avg_percent_error = np.mean(percent_errors)
     
-    return average_percent_error
-
+    return avg_percent_error

@@ -19,11 +19,11 @@ def arx_model(u, y, order):
     - e[k] is the error term
 
     In matrix form, we construct:
-    Phi = [[u[k-1], u[k-2], ..., u[k-order], -y[k-1], -y[k-2], ..., -y[k-order], 1], ...]
+    phi = [[u[k-1], u[k-2], ..., u[k-order], -y[k-1], -y[k-2], ..., -y[k-order]] ...]
     Y = [y[order], y[order+1], ..., y[n_samples-1]]
 
     The parameters theta are obtained by solving:
-    theta = (Phi.T * Phi)^(-1) * Phi.T * Y
+    theta = (phi.T * phi)^(-1) * phi.T * Y
 
     Parameters:
     u : numpy array
@@ -36,33 +36,29 @@ def arx_model(u, y, order):
     Returns:
     theta : numpy array
         Estimated parameters of the system.
-    Phi : numpy array
+    phi : numpy array
         The constructed data matrix.
     Y : numpy array
-        The vector of output values aligned with Phi.
+        The vector of output values aligned with phi.
     """
     n_samples = len(u)
     
-    # Construct the Phi matrix
-    Phi = np.zeros((n_samples - order, 2 * order))
+    # Construct the phi matrix
+    phi = np.zeros((n_samples - order, 2 * order))
     for i in range(order, n_samples):
         u_slice = np.flip(u[i-order+1:i+1])
         y_slice = np.flip(-y[i-order:i]) 
         
-        # Debug prints to verify the slices
-        # print(f"i: {i}, u_slice: {u_slice}, y_slice: {y_slice}")
-
-        Phi[i - order, :order] = u_slice
-        Phi[i - order, order:2*order] = y_slice
-        # Phi[i - order, -1] = 1
+        phi[i - order, :order] = u_slice
+        phi[i - order, order:2*order] = y_slice
     
     # Construct the Y vector
     Y = y[order:]
     
     # Calculate theta using the normal equation
-    theta = np.linalg.inv(Phi.T @ Phi) @ Phi.T @ Y
+    theta = np.linalg.inv(phi.T @ phi) @ phi.T @ Y
     
-    return theta, Phi, Y
+    return theta, phi, Y
 
 
 def generalized_exponential_model(t, *params):
@@ -98,6 +94,7 @@ def generalized_exponential_model(t, *params):
         bi = params[2 + 2 * i]
         result += ci * np.exp(-bi * t)
     return result
+
 
 def complexpoles_exponential_model(t, *params):
     """
@@ -138,8 +135,22 @@ def complexpoles_exponential_model(t, *params):
         result += 2 * b * np.exp(-alpha * t) * np.sin(beta * t)
     return result
 
-# Fit straight-line models
+
 def fit_straight_line(x, y):
+    """
+    Fit a straight line to the data using linear regression.
+
+    Parameters:
+    x : numpy array
+        Array of x values.
+    y : numpy array
+        Array of y values.
+
+    Returns:
+    tuple
+        Tuple containing:
+        - slope: Slope of the fitted line.
+        - intercept: Intercept of the fitted line.
+    """
     slope, intercept, r_value, p_value, std_err = linregress(x, y)
     return slope, intercept
-

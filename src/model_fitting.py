@@ -14,7 +14,7 @@ def fit_model(times, values, n_terms=1, idx=None):
     values : numpy array
         Array of corresponding data values to fit the model.
     n_terms : int, optional
-        Number of exponential terms in the model (default is 2).
+        Number of exponential terms in the model.
     idx : int, optional
         Index of the charging cycle (default is None).
 
