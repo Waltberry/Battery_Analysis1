@@ -1,6 +1,10 @@
 language: python
 python:
-  - "3.12.4"
+  - "3.12" 
+
+before_install:
+  - pyenv install 3.12.4
+  - pyenv global 3.12.4
 
 install:
   - pip install -r requirements.txt
