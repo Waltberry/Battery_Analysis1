@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.stats import linregress
 
+
 def arx_model(u, y, order):
     """
     Discrete Time System Identification using least squares method.
