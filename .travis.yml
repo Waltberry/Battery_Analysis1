@@ -1,14 +1,6 @@
 language: python
 python:
-  - "3.12"  # Use a version that closely matches what you need
-
-before_install:
-  - curl https://pyenv.run | bash
-  - export PATH="$HOME/.pyenv/bin:$PATH"
-  - eval "$(pyenv init --path)"
-  - eval "$(pyenv virtualenv-init -)"
-  - pyenv install 3.12.4
-  - pyenv global 3.12.4
+  - "3.11" 
 
 install:
   - pip install -r requirements.txt
