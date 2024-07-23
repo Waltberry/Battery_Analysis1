@@ -1,5 +1,3 @@
-import pandas as pd
-
 def identify_charging_cycles(data, time_col, value_col):
     """
     Identify charging cycles from the given dataset.
@@ -7,7 +5,7 @@ def identify_charging_cycles(data, time_col, value_col):
     This function analyzes the given dataset to identify charging cycles based on
     the provided time and value columns. A charging cycle is defined as a sequence
     of increasing values starting from a value greater than zero and ending when
-    the value stops increasing.
+    the value stops increasing or decreases.
 
     Parameters:
     data (pd.DataFrame): The dataset containing the time and value columns.
