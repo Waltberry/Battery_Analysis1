@@ -28,7 +28,7 @@ def fit_model(times, values, n_terms=1, idx=None):
     """
     if len(times) < 2 or len(values) < 2:
         print(f"Not enough data points to fit model for Charging Cycle {idx+1}.")
-        return times, values, None, None, False  # Indicate fitting was not successful
+        return times, values, None, None, False 
     
     valid_indices = np.isfinite(times) & np.isfinite(values)
     times = times[valid_indices]
@@ -36,7 +36,7 @@ def fit_model(times, values, n_terms=1, idx=None):
     
     if len(times) < 2 or len(values) < 2:
         print(f"Not enough valid data points to fit model for Charging Cycle {idx+1} after removing NaNs and infinite values.")
-        return times, values, None, None, False  # Indicate fitting was not successful 
+        return times, values, None, None, False 
     
     print(f"Fitting model for Charging Cycle {idx+1} with {len(times)} data points.")
     
@@ -84,19 +84,17 @@ def fit_model(times, values, n_terms=1, idx=None):
     
     try:
         # Fit the model
-        params, covariance = curve_fit(generalized_exponential_model, x_normalized, y_normalized, p0=initial_guess, bounds=(lower_bounds, upper_bounds), maxfev=5000)
+        params, _ = curve_fit(generalized_exponential_model, x_normalized, y_normalized, p0=initial_guess, bounds=(lower_bounds, upper_bounds), maxfev=5000)
         fitted_params = params
         
         # Generate fitted values
         y_fitted_normalized = generalized_exponential_model(x_normalized, *fitted_params)
-        
-        
         y_fitted = y_fitted_normalized * y_std + y_mean
         
         return times, values, y_fitted, fitted_params, True  # Indicate fitting was successful
     except Exception as e:
         print(f"Could not fit model for Charging Cycle {idx+1}: {e}")
-        return times, values, None, None, False  # Indicate fitting was not successful
+        return times, values, None, None, False
 
 
 def fit_and_plot_cycle(times, values, idx, n_terms=1):
