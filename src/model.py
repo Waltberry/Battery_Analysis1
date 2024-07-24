@@ -1,47 +1,48 @@
 import numpy as np
 from scipy.stats import linregress
 
-
 def arx_model(u, y, order):
     """
-    Discrete Time System Identification using least squares method.
-
-    This function identifies the parameters of a discrete-time system given input-output data
-    using the least squares method. The system is assumed to be linear and represented by
-    a difference equation of a specified order.
+    Estimate the parameters of an ARX (AutoRegressive with eXogenous inputs) model.
 
     Mathematical Expression:
-    The system is modeled as:
-    y[k] = -sum(a_i * y[k-i]) + sum(b_i * u[k-i]) + e[k]
-
+    The ARX model is given by:
+    
+        y(t) = a1*y(t-1) + a2*y(t-2) + ... + an*y(t-n) + b1*u(t-1) + b2*u(t-2) + ... + bn*u(t-n) + e(t)
+    
+    In matrix form:
+    
+        Y = Φθ + e
+    
     where:
-    - a_i are the coefficients for the past outputs
-    - b_i are the coefficients for the past inputs
-    - e[k] is the error term
+        - Y is the vector of observed output values.
+        - Φ (phi) is the matrix of past input and output values.
+        - θ is the vector of parameters [b1, b2, ..., bn, -a1, -a2, ..., -an].
+        - e is the error vector.
 
-    In matrix form, we construct:
-    phi = [[u[k-1], u[k-2], ..., u[k-order], -y[k-1], -y[k-2], ..., -y[k-order]] ...]
-    Y = [y[order], y[order+1], ..., y[n_samples-1]]
+    The Φ (phi) matrix is constructed as follows:
+    
+        Φ = | u[n-1]  u[n-2]  ...  u[n-order]  -y[n-1]  -y[n-2]  ...  -y[n-order] |
+            | u[n]    u[n-1]  ...  u[n-order+1] -y[n]    -y[n-1] ...  -y[n-order+1]|
+            | ...    ...      ...  ...          ...      ...     ...  ...          |
+            | u[N-1]  u[N-2]  ...  u[N-order]   -y[N-1]  -y[N-2] ...  -y[N-order]  |
 
-    The parameters theta are obtained by solving:
+    The parameter vector θ is estimated using the normal equation:
+    
+        θ = (Φ.T @ Φ)^(-1) @ Φ.T @ Y
     theta = (phi.T * phi)^(-1) * phi.T * Y
 
     Parameters:
-    u : numpy array
-        Array of input values.
-    y : numpy array
-        Array of output values.
-    order : int
-        Order of the system.
-
+        u (numpy array): The input signal (exogenous input).
+        y (numpy array): The output signal.
+        order (int): The order of the ARX model.
+    
     Returns:
-    theta : numpy array
-        Estimated parameters of the system.
-    phi : numpy array
-        The constructed data matrix.
-    Y : numpy array
-        The vector of output values aligned with phi.
-    """
+        theta (numpy array): The estimated parameters of the ARX model.
+        phi (numpy array): The matrix of past input and output values.
+        Y (numpy array): The vector of observed output values starting from the given order.
+    """    
+    
     n_samples = len(u)
     
     # Construct the phi matrix
@@ -60,6 +61,7 @@ def arx_model(u, y, order):
     theta = np.linalg.inv(phi.T @ phi) @ phi.T @ Y
     
     return theta, phi, Y
+
 
 
 def generalized_exponential_model(t, *params):
