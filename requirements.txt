@@ -12,7 +12,7 @@ fonttools==4.53.0
 galvani==0.4.1
 iniconfig==2.0.0
 ipykernel==6.29.4
-ipython>=7.0.0
+ipython>=8.0.0
 jedi==0.19.1
 jupyter_client==8.6.2
 jupyter_core==5.7.2
@@ -39,7 +39,7 @@ python-dateutil==2.9.0.post0
 pytz==2024.1
 # pywin32==306
 pyzmq==26.0.3
-scipy==1.14.0
+scipy>=1.13.0
 six==1.16.0
 stack-data==0.6.3
 statsmodels==0.14.2
