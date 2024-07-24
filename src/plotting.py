@@ -1,26 +1,34 @@
 import matplotlib.pyplot as plt
 
-def plot_scatterplot(times, values, idx):
+def plot_scatterplot(times, values, idx=None, x_label='Time (hours)', y_label='Ewe/mV.4', title=None):
     """
     Plot data as a scatter plot for a given charging cycle.
 
-    This function creates a scatter plot of the provided time and value data, 
-    labeling it with the index of the charging cycle.
+    This function creates a scatter plot of the provided time and value data,
+    with customizable x and y labels, and an optional title. If no title is provided,
+    it defaults to 'Charging Cycle {idx+1}' if idx is given, otherwise '{y_label} vs {x_label}'.
 
     Parameters:
     times (list or array-like): List or array of time values.
     values (list or array-like): List or array of corresponding data values.
-    idx (int): Index of the charging cycle.
+    idx (int, optional): Index of the charging cycle.
+    x_label (str): Label for the x-axis. Defaults to 'Time (hours)'.
+    y_label (str): Label for the y-axis. Defaults to 'Ewe/mV.4'.
+    title (str, optional): Title for the plot. Defaults to None.
 
     Returns:
     None
     """
     plt.figure()
-    plt.scatter(times, values, label=f'Charging Cycle {idx+1}')
-    plt.xlabel('Time (hours)')
-    plt.ylabel('Ewe/mV.4')
-    plt.title(f'Charging Cycle {idx+1}')
-    plt.legend()
+    plt.scatter(times, values, label=f'Charging Cycle {idx+1}' if idx is not None else '')
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
+    if title:
+        plt.title(title)
+    else:
+        plt.title(f'Charging Cycle {idx+1}' if idx is not None else f'{y_label} vs {x_label}')
+    if idx is not None:
+        plt.legend()
     plt.show()
 
 def plot_fitted(times, values, y_fitted, idx):
@@ -66,7 +74,7 @@ def print_fitted_params(fitted_params, n_terms=3):
     for label, param in zip(param_labels, fitted_params):
         print(f'{label} = {param:.4f}')
 
-def plot_cost(costs, name='Cost'):
+def plot_cost(costs, name='MSE'):
     """
     Plot the costs of each charging cycle.
 
