@@ -1,8 +1,24 @@
 import os
 import pandas as pd
 import re
+from galvani import BioLogic
 
 TIME_COLUMN_NAME = 'Time (HH:mm:ss.SSS)'
+
+def load_mpr(file_name):
+    # Get the absolute path of the project's root directory
+    project_root = os.path.dirname(os.path.dirname(__file__))
+    
+    # Construct the path to the data folder
+    data_folder = os.path.join(project_root, 'Flow Battery Project', 'data')
+    
+    # Construct the full file path
+    file_path = os.path.join(data_folder, file_name)
+    
+    # Load the Excel file
+    xls = BioLogic.MPRfile(file_path)
+    
+    return xls
 
 def load_excel(file_name):
     """

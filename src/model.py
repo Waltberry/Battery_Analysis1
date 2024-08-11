@@ -1,6 +1,9 @@
 import numpy as np
 from scipy.stats import linregress
 
+def fractional_order_ecm():
+    pass
+
 def arx_model(u, y, order):
     """
     Estimate the parameters of an ARX (AutoRegressive with eXogenous inputs) model.
