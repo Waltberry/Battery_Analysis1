@@ -45,3 +45,34 @@ def identify_charging_cycles(data, time_col, value_col):
         charging_cycles.append(cycle)
 
     return charging_cycles
+
+def find_charging_cycles(df):
+    cycles = []
+    current_cycle = []
+    # Use df.index for accessing rows
+    index = df.index
+    i = 0
+    while i < len(index):
+        control_value = df.loc[index[i], 'control/mA']
+        if control_value > 0:
+            # Find the start of the cycle (including 10 points from the previous negative part)
+            start_time = index[max(0, i-10)]
+            current_index = start_time
+            # Collect data from start to current index
+            while current_index < index[i]:
+                current_cycle.append(df.loc[current_index])
+                # Move to the next index
+                next_index = df.index[df.index.get_loc(current_index) + 1] if (df.index.get_loc(current_index) + 1) < len(df.index) else None
+                if next_index is None:
+                    break
+                current_index = next_index
+            while i < len(index) and df.loc[index[i], 'control/mA'] > 0:
+                current_cycle.append(df.loc[index[i]])
+                i += 1
+            # End of the cycle, add it to cycles list
+            cycles.append(pd.DataFrame(current_cycle))
+            current_cycle = []
+        else:
+            i += 1
+    return cycles
+
