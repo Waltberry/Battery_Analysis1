@@ -126,3 +126,24 @@ def plot_cost(costs, name='Cost'):
     plt.ylabel(name)
     plt.grid(True)
     plt.show()
+    
+def plot_cycles(cycles):
+    for idx, cycle in enumerate(cycles):
+        fig, ax1 = plt.subplots()
+
+        # Plot control/mA on the left y-axis
+        ax1.plot(cycle.index, cycle['control/mA'], 'b-', label='Current (mA)')
+        ax1.set_xlabel('Time (s)')
+        ax1.set_ylabel('Current (mA)', color='b')
+        ax1.tick_params(axis='y', labelcolor='b')
+
+        # Create a second y-axis for Ewe/V
+        ax2 = ax1.twinx()
+        ax2.plot(cycle.index, cycle['Ewe/V'], 'r-', label='Ewe/V')
+        ax2.set_ylabel('Ewe/V', color='r')
+        ax2.tick_params(axis='y', labelcolor='r')
+
+        # Add titles and legends
+        plt.title(f'Cycle {idx+1}')
+        fig.tight_layout()  # Adjust layout to make room for the second y-axis
+        plt.show()
