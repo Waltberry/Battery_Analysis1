@@ -132,9 +132,9 @@ def plot_cycles(cycles):
         fig, ax1 = plt.subplots()
 
         # Plot control/mA on the left y-axis
-        ax1.plot(cycle.index, cycle['control/mA'], 'b-', label='Current (mA)')
+        ax1.plot(cycle.index, cycle['control/mA'], 'b-', label='Control/mA')
         ax1.set_xlabel('Time (s)')
-        ax1.set_ylabel('Current (mA)', color='b')
+        ax1.set_ylabel('Control/mA', color='b')
         ax1.tick_params(axis='y', labelcolor='b')
 
         # Create a second y-axis for Ewe/V
