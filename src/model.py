@@ -1,8 +1,106 @@
 import numpy as np
 from scipy.stats import linregress
+import scipy as sp
+import src.sysid_util as sid 
 
-def fractional_order_ecm():
-    pass
+def estimate_parameters(yy, uu, nf, nb, na, nc=0, nd=0, nk=0):
+    """
+    Estimate model parameters using ARX and Box-Jenkins models.
+
+    This function processes input and output data arrays (yy and uu) to estimate model parameters.
+    The model parameters for ARX and Box-Jenkins are calculated and stored for each cycle.
+
+    Parameters:
+    yy (list of np.array): List of output data arrays (each array corresponds to a cycle).
+    uu (list of np.array): List of input data arrays (each array corresponds to a cycle).
+    nf (int): Number of poles for the ARX model (default=2).
+    nb (int): Number of zeros for the ARX model (default=2).
+    nc (int): Number of poles for the noise model in Box-Jenkins (default=0).
+    nd (int): Number of zeros for the noise model in Box-Jenkins (default=0).
+    na (int): Number of poles for the AR model in Box-Jenkins (default=2).
+    nk (int): Input delay for the ARX and Box-Jenkins models (default=0).
+
+    Returns:
+    tuple: Containing three lists:
+        - theta_arx_list: List of ARX model parameters for each cycle.
+        - theta_bj_list: List of Box-Jenkins model parameters for each cycle.
+        - optimization_results_list: List of optimization results for each cycle.
+    """
+    
+    # Initialize lists to store results
+    theta_arx_list = []
+    theta_bj_list = []
+    optimization_results_list = []
+
+    # Iterate through all arrays in yy and uu, skipping the first cycle
+    for i in range(1, len(yy)):
+        uu[i] = uu[i] - uu[i][0] * np.ones(len(uu[i]))
+        yy[i] = yy[i] - yy[i][0] * np.ones(len(yy[i]))
+
+        # Calculate the ARX model parameters
+        n_arx = [nf, nb, nk]
+        theta_arx = sid.V_arx_lin_reg(n_arx, yy[i], uu[i])
+        
+        # Store theta_arx in the list
+        theta_arx_list.append(theta_arx)
+        
+        # Prepare initial guess for Box-Jenkins model
+        theta_box_jenkins = np.concatenate((
+            theta_arx[n_arx[0]:np.sum(n_arx)], 
+            np.zeros(nc + nd), 
+            theta_arx[0:n_arx[0]]
+        ))
+
+        # Define the structure for the Box-Jenkins model
+        n_bj = [nb, nc, nd, nf, nk]
+        
+        # Perform optimization for Box-Jenkins model parameters
+        optimization_results = sp.optimize.least_squares(
+            sid.V_box_jenkins, 
+            theta_box_jenkins, 
+            jac=sid.jac_V_bj, 
+            args=(n_bj, yy[i], uu[i])
+        )
+        
+        # Store the optimization results in the list
+        optimization_results_list.append(optimization_results)
+
+    return theta_arx_list, theta_bj_list, optimization_results_list
+
+def process_optimization_results(optimization_results_list):
+    """
+    Process the optimization results to extract x values and cost values.
+
+    This function iterates through the provided optimization results, extracting
+    the optimized parameters (x) and the associated cost for each result. It 
+    prints each set of values and also returns lists of all x values and cost values.
+
+    Parameters:
+    optimization_results_list (list): A list of optimization result objects, 
+                                      each containing .x and .cost attributes.
+
+    Returns:
+    tuple: Two lists containing the x values and the cost values from the optimization results.
+    """
+    x_values = []
+    cost_values = []
+
+    for result in optimization_results_list:
+        x_values.append(result.x)
+        cost_values.append(result.cost)
+
+        # Print x and cost for each optimization result
+        print("x:", result.x)
+        print("cost:", result.cost)
+        print()
+
+    return x_values, cost_values
+
+# Example usage
+# Assuming optimization_results_list is already defined from the previous function
+# x_values, cost_values = process_optimization_results(optimization_results_list)
+
+
 
 def arx_model(u, y, order):
     """
