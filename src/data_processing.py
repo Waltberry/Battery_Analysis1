@@ -48,22 +48,22 @@ def identify_charging_cycles(data, time_col, value_col):
 
     return charging_cycles
 
-def get_previous_negative_segment(df, start_idx):
+def get_previous_segment(df, start_idx):
     """
-    Collect the previous negative segment (up to 10 points) before a charging cycle starts.
+    Collect the previous segment (up to 10 points) before a charging/discharging cycle starts.
 
-    This function looks back from the start of a charging cycle to collect up to 10
+    This function looks back from the start of a charging/discharging cycle to collect up to 10
     data points where the control value was negative or zero. These points help in
     identifying the beginning of the cycle, ensuring a comprehensive cycle analysis.
 
     Parameters:
-    df (pd.DataFrame): The dataset containing the charging data.
-    start_idx (int): The index where the charging cycle starts.
+    df (pd.DataFrame): The dataset containing the charging/discharging data.
+    start_idx (int): The index where the charging/discharging cycle starts.
 
     Returns:
     list: A list of rows (as dictionaries) representing the previous negative segment.
     """
-    negative_segment = []
+    segment = []
     
     # Determine the starting point (either 10 points before the cycle or the beginning of the data)
     start_time = df.index[max(0, start_idx - 10)]
@@ -71,14 +71,14 @@ def get_previous_negative_segment(df, start_idx):
     
     # Iterate through the data from start_time to just before start_idx
     while current_index < df.index[start_idx]:
-        negative_segment.append(df.loc[current_index])  # Append each row to the segment
+        segment.append(df.loc[current_index])  # Append each row to the segment
         # Get the next index, ensuring we don't go out of bounds
         next_index = df.index[df.index.get_loc(current_index) + 1] if (df.index.get_loc(current_index) + 1) < len(df.index) else None
         if next_index is None:
             break
         current_index = next_index  # Move to the next index
     
-    return negative_segment
+    return segment
 
 def collect_charging_cycle(df, start_idx):
     """
@@ -106,6 +106,33 @@ def collect_charging_cycle(df, start_idx):
     
     return charging_cycle, i  # Return the collected cycle and the next index to process
 
+def collect_discharging_cycle(df, start_idx):
+    """
+    Collect the data points for a discharging cycle.
+
+    This function gathers all data points from the start of a discharging cycle until the
+    cycle ends (i.e., when the control value becomes non-negative). The cycle is defined
+    by the control/mA column.
+
+    Parameters:
+    df (pd.DataFrame): The dataset containing the discharging data.
+    start_idx (int): The index where the discharging cycle starts.
+
+    Returns:
+    list: A list of rows (as dictionaries) representing the discharging cycle.
+    int: The index where the discharging cycle ends, to continue processing.
+    """
+    discharging_cycle = []
+    i = start_idx  # Start from the provided start index
+    
+    # Continue adding points to the discharging cycle as long as control/mA < 0
+    while i < len(df.index) and df.loc[df.index[i], 'control/mA'] < 0:
+        discharging_cycle.append(df.loc[df.index[i]])  # Add current row to the cycle
+        i += 1  # Move to the next index
+    
+    return discharging_cycle, i  # Return the collected cycle and the next index to process
+
+
 def find_charging_cycles(df):
     """
     Find and return all charging cycles from the given DataFrame.
@@ -130,7 +157,7 @@ def find_charging_cycles(df):
         
         if control_value > 0:  # If a positive control value is found, a cycle starts
             # Get the previous negative segment to prepend to the charging cycle
-            previous_segment = get_previous_negative_segment(df, i)
+            previous_segment = get_previous_segment(df, i)
             # Collect the charging cycle and update the index to where the cycle ends
             current_cycle, i = collect_charging_cycle(df, i)
             # Combine the previous segment and the current cycle into one DataFrame and add to cycles
@@ -139,3 +166,37 @@ def find_charging_cycles(df):
             i += 1  # If not in a charging cycle, move to the next index
     
     return cycles  # Return the list of all identified charging cycles
+
+def find_discharging_cycles(df):
+    """
+    Find and return all discharging cycles from the given DataFrame.
+
+    This function processes the entire dataset to identify and isolate discharging cycles,
+    which are sequences where the control/mA is negative. Each cycle includes a small
+    segment of positive data points preceding the negative sequence to capture the
+    transition into the discharging phase.
+
+    Parameters:
+    df (pd.DataFrame): The dataset containing the discharging data.
+
+    Returns:
+    list of pd.DataFrame: A list where each element is a DataFrame representing a discharging cycle.
+    """
+    cycles = []  # List to hold all identified cycles
+    i = 0  # Start index for iteration
+    
+    # Iterate through the entire DataFrame by index
+    while i < len(df.index):
+        control_value = df.loc[df.index[i], 'control/mA']  # Current control value
+        
+        if control_value < 0:  # If a negative control value is found, a cycle starts
+            # Get the previous positive segment to prepend to the discharging cycle
+            previous_segment = get_previous_segment(df, i)
+            # Collect the discharging cycle and update the index to where the cycle ends
+            current_cycle, i = collect_discharging_cycle(df, i)
+            # Combine the previous segment and the current cycle into one DataFrame and add to cycles
+            cycles.append(pd.DataFrame(previous_segment + current_cycle))
+        else:
+            i += 1  # If not in a discharging cycle, move to the next index
+    
+    return cycles  # Return the list of all identified discharging cycles
