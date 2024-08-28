@@ -47,6 +47,44 @@ def load_excel(file_name):
     
     return xls
 
+
+def load_txt(file_name):
+    """
+    Load a text file from the 'Flow Battery Project' data folder.
+
+    This function constructs the full file path to a text file located in the 
+    'Flow Battery Project/data' folder and loads it into a pandas DataFrame object.
+
+    Parameters:
+    file_name (str): Name of the text file to load.
+
+    Returns:
+    pd.DataFrame: The loaded text file as a pandas DataFrame.
+    """
+    # Get the absolute path of the project's root directory
+    project_root = os.path.dirname(os.path.dirname(__file__))
+    
+    # Construct the path to the data folder
+    data_folder = os.path.join(project_root, 'Flow Battery Project', 'data')
+    
+    # Construct the full file path
+    file_path = os.path.join(data_folder, file_name)
+    
+    # Ensure the path uses the correct format for the operating system
+    file_path = os.path.normpath(file_path)
+    
+    # Check if the file exists before trying to read it
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"The file {file_path} does not exist.")
+    
+    # Load the text file, skipping the initial metadata rows and parsing the columns
+    df = pd.read_csv(file_path, sep=r'\s+', skiprows=5, header=None)
+    df.columns = ["Time Step", "voltage_vp", "flow-time"]
+    
+    return df
+
+
+
 def load_csv_files(file_names, sub_folder):
     """
     Load and process multiple CSV files from the specified subfolder within the 'Hydrogen Project' data folder.
