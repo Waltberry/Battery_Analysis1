@@ -1,8 +1,229 @@
 import numpy as np
 from scipy.stats import linregress
+import scipy as sp
+import src.sysid_util as sid 
+import control as ct
+import numpy as np
+import matplotlib.pyplot as plt
 
-def fractional_order_ecm():
-    pass
+def estimate_parameters(yy, uu, nf, nb, na, nc=0, nd=0, nk=0):
+    """
+    Estimate model parameters using ARX and Box-Jenkins models.
+
+    This function processes input and output data arrays (yy and uu) to estimate model parameters.
+    The model parameters for ARX and Box-Jenkins are calculated and stored for each cycle.
+
+    Parameters:
+    yy (list of np.array): List of output data arrays (each array corresponds to a cycle).
+    uu (list of np.array): List of input data arrays (each array corresponds to a cycle).
+    nf (int): Number of poles for the ARX model (default=2).
+    nb (int): Number of zeros for the ARX model (default=2).
+    nc (int): Number of poles for the noise model in Box-Jenkins (default=0).
+    nd (int): Number of zeros for the noise model in Box-Jenkins (default=0).
+    na (int): Number of poles for the AR model in Box-Jenkins (default=2).
+    nk (int): Input delay for the ARX and Box-Jenkins models (default=0).
+
+    Returns:
+    tuple: Containing three lists:
+        - theta_arx_list: List of ARX model parameters for each cycle.
+        - theta_bj_list: List of Box-Jenkins model parameters for each cycle.
+        - optimization_results_list: List of optimization results for each cycle.
+    """
+    
+    # Initialize lists to store results
+    theta_arx_list = []
+    theta_bj_list = []
+    optimization_results_list = []
+
+    # Iterate through all arrays in yy and uu, skipping the first cycle
+    for i in range(1, len(yy)):
+        uu[i] = uu[i] - uu[i][0] * np.ones(len(uu[i]))
+        yy[i] = yy[i] - yy[i][0] * np.ones(len(yy[i]))
+
+        # Calculate the ARX model parameters
+        n_arx = [nf, nb, nk]
+        theta_arx = sid.V_arx_lin_reg(n_arx, yy[i], uu[i])
+        
+        # Store theta_arx in the list
+        theta_arx_list.append(theta_arx)
+        
+        # Prepare initial guess for Box-Jenkins model
+        theta_box_jenkins = np.concatenate((
+            theta_arx[n_arx[0]:np.sum(n_arx)], 
+            np.zeros(nc + nd), 
+            theta_arx[0:n_arx[0]]
+        ))
+
+        # Define the structure for the Box-Jenkins model
+        n_bj = [nb, nc, nd, nf, nk]
+        
+        # Perform optimization for Box-Jenkins model parameters
+        optimization_results = sp.optimize.least_squares(
+            sid.V_box_jenkins, 
+            theta_box_jenkins, 
+            jac=sid.jac_V_bj, 
+            args=(n_bj, yy[i], uu[i])
+        )
+        
+        # Store the optimization results in the list
+        optimization_results_list.append(optimization_results)
+
+    return theta_arx_list, theta_bj_list, optimization_results_list
+
+def process_optimization_results(optimization_results_list):
+    """
+    Process the optimization results to extract x values and cost values.
+
+    This function iterates through the provided optimization results, extracting
+    the optimized parameters (x) and the associated cost for each result. It 
+    prints each set of values and also returns lists of all x values and cost values.
+
+    Parameters:
+    optimization_results_list (list): A list of optimization result objects, 
+                                      each containing .x and .cost attributes.
+
+    Returns:
+    tuple: Two lists containing the x values and the cost values from the optimization results.
+    """
+    x_values = []
+    cost_values = []
+
+    for result in optimization_results_list:
+        x_values.append(result.x)
+        cost_values.append(result.cost)
+
+        # Print x and cost for each optimization result
+        print("x:", result.x)
+        print("cost:", result.cost)
+        print()
+
+    return x_values, cost_values
+
+# Assuming optimization_results_list is already defined from the previous function
+# x_values, cost_values = process_optimization_results(optimization_results_list)
+
+
+def analyze_cost_values(cost_values, threshold=2):
+    """
+    Analyze the cost values to detect outliers and plot the cost over cycles.
+
+    This function calculates the mean and standard deviation of the cost values,
+    computes Z-scores to identify outliers, and plots the cost values over cycles.
+    Outliers are highlighted in the plot.
+
+    Parameters:
+    cost_values (list): A list of cost values from the optimization results.
+    threshold (float, optional): The Z-score threshold to identify outliers. Default is 2.
+
+    Returns:
+    list: A list of tuples containing the cycle number, cost value, and Z-score for each detected outlier.
+    """
+    # Calculate mean and standard deviation of the cost values
+    mean_cost = np.mean(cost_values)
+    std_cost = np.std(cost_values)
+
+    # Calculate Z-scores
+    z_scores = [(cost - mean_cost) / std_cost for cost in cost_values]
+
+    # Identify outliers based on the Z-score threshold
+    outliers = [(i + 1, cost_values[i], z_scores[i]) for i in range(len(z_scores)) if abs(z_scores[i]) > threshold]
+
+    # Print detected outliers
+    for cycle, cost, z_score in outliers:
+        print(f"Outlier detected - Cycle: {cycle}, Cost: {cost:.2f}, Z-Score: {z_score:.2f}")
+
+    # Plot cost over cycles
+    plt.plot(range(1, len(cost_values) + 1), cost_values, marker='o', label='Cost')
+
+    # Highlight outliers in the plot
+    for cycle, cost, _ in outliers:
+        plt.scatter(cycle, cost, color='red', label='Outlier' if cycle == outliers[0][0] else "")
+    
+    plt.xlabel('Cycle Number')
+    plt.ylabel('Cost')
+    plt.title('Cost over Cycles')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+    return outliers
+
+# Example usage
+# Assuming cost_values is already defined
+# outliers = analyze_cost_values(cost_values)
+
+def analyze_cycles(optimization_results_list, uu, yy, Ts=0.005, nb=2, nc=0, nd=0, nf=2, nk=0):
+    """
+    Analyze and simulate the system's response for each cycle using the optimized parameters.
+    
+    This function extracts the transfer functions for each cycle, simulates the system's response,
+    and generates plots for measured vs. simulated outputs and input on two y-axes. It also prints
+    the transfer function, zeros, and poles for each cycle and generates a Bode plot.
+    
+    Parameters:
+    optimization_results_list (list): A list of optimization results containing optimized parameters.
+    uu (list): A list of input (control/mA) arrays.
+    yy (list): A list of output (voltage) arrays.
+    Ts (float, optional): Sampling time. Default is 0.005.
+    nb (int, optional): Number of numerator parameters for the Box-Jenkins model. Default is 2.
+    nc (int, optional): Number of noise model parameters. Default is 0.
+    nd (int, optional): Number of delay model parameters. Default is 0.
+    nf (int, optional): Number of feedback model parameters. Default is 2.
+    nk (int, optional): Number of time delays. Default is 0.
+    """
+    # Define the structure for the Box-Jenkins model
+    n_bj = [nb, nc, nd, nf, nk]
+
+    # Loop through the arrays in yy and uu, skipping the first one
+    for i in range(1, len(yy)):
+        # Extract the optimized parameters for the current cycle
+        G_hat_box_jenkins, H_hat_box_jenkins = sid.theta_2_tf_box_jenkins(
+            optimization_results_list[i-1].x, n_bj, Ts
+        )
+        
+        # Print the transfer function
+        print(f"Cycle {i}: G_hat_box_jenkins")
+        print(G_hat_box_jenkins)
+        
+        # Print zeros and poles
+        print(f"Cycle {i}: Zeros")
+        print(G_hat_box_jenkins.zeros())
+        print(f"Cycle {i}: Poles")
+        print(G_hat_box_jenkins.poles())
+        
+        # Simulate the system's response using the identified transfer function
+        tt, y_sim = ct.forced_response(G_hat_box_jenkins, U=uu[i])
+        
+        # Plot measured vs. simulated output and input on two y-axes
+        fig, ax1 = plt.subplots()
+
+        # Plot measured and simulated output on the left y-axis
+        ax1.plot(yy[i], 'b-', label='Measured')
+        ax1.plot(y_sim, 'g-', label='Simulated')
+        ax1.set_xlabel('Time (s)')
+        ax1.set_ylabel('Voltage', color='b')
+        ax1.tick_params(axis='y', labelcolor='b')
+        ax1.legend(loc='center right')  # Legend location: middle right
+
+        # Create a second y-axis for the input (control/mA)
+        ax2 = ax1.twinx()
+        ax2.plot(uu[i], 'r-', label='Input (control/mA)')
+        ax2.set_ylabel('Control/mA', color='r')
+        ax2.tick_params(axis='y', labelcolor='r')
+        ax2.legend(loc='lower right')  # Legend location: lower right
+
+        # Add title
+        plt.title(f'Measured vs. Simulated Outputs and Input for Cycle {i}')
+        
+        # Adjust layout to avoid overlapping labels
+        fig.tight_layout()
+
+        # Show the plot
+        plt.show()
+
+        # Bode plot for the identified transfer function
+        ct.bode_plot(G_hat_box_jenkins)
+
 
 def arx_model(u, y, order):
     """
