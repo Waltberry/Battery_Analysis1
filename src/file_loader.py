@@ -118,10 +118,16 @@ def load_csv_files(file_names, sub_folder, project_folder, data='data'):
         df[TIME_COLUMN_NAME] = df[TIME_COLUMN_NAME].str.strip('()')
         # Discard the unnecessary columns
         df = df.drop(columns=['unnamed2', 'unnamed3', 'unnamed4'])
+        # Below code is for identifying the 'Data Source' from the file name (optional)
         # Extract the relevant part of the file name for 'Data Source'
+        # match = re.search(r'_N11507060127_(.*?)_', file_name)
+        # if match:
+        #     middle_part = match.group(1)
+        # else:
+        #     middle_part = "rapid_polarization"
         # middle_part = re.search(r'Polarization_(.*?) mpm_corr', file_name).group(1)
-        middle_part = re.search(r'Rapid polarization', file_name).group(1)
-        df['Data Source'] = middle_part
+        # middle_part = re.search(r'Rapid (.*)', file_name).group()
+        # df['Data Source'] = middle_part
         return df
 
     # Read each file into a DataFrame with error handling and process them
