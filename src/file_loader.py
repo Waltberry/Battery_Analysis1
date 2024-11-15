@@ -85,7 +85,7 @@ def load_txt(file_name):
 
 
 
-def load_csv_files(file_names, sub_folder):
+def load_csv_files(file_names, sub_folder, project_folder, data='data'):
     """
     Load and process multiple CSV files from the specified subfolder within the 'Hydrogen Project' data folder.
 
@@ -104,7 +104,7 @@ def load_csv_files(file_names, sub_folder):
     project_root = os.path.dirname(os.path.dirname(__file__))
     
     # Construct the path to the data folder
-    data_folder = os.path.join(project_root, 'Hydrogen Project', 'data', sub_folder)
+    data_folder = os.path.join(project_root, project_folder, data, sub_folder)
     
     # Dictionary to hold DataFrames
     dataframes = {}
@@ -119,7 +119,8 @@ def load_csv_files(file_names, sub_folder):
         # Discard the unnecessary columns
         df = df.drop(columns=['unnamed2', 'unnamed3', 'unnamed4'])
         # Extract the relevant part of the file name for 'Data Source'
-        middle_part = re.search(r'Polarization_(.*?) mpm_corr', file_name).group(1)
+        # middle_part = re.search(r'Polarization_(.*?) mpm_corr', file_name).group(1)
+        middle_part = re.search(r'Rapid polarization', file_name).group(1)
         df['Data Source'] = middle_part
         return df
 
