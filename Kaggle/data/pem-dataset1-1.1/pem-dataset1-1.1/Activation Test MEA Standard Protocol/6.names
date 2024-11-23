@@ -1,0 +1,74 @@
+Activation Test MEA : Standard Protocol
+Polarization : End of Each Activation Set
+
+SOURCE:
+Electrochemistry Simulation Tools (ECSIM) Organization 
+Website: https://www.ecsim.ir
+Repository: https://github.com/ECSIM/pem-dataset1
+Data paper: https://doi.org/10.26434/chemrxiv.11902023
+Date received: 5 July 2019
+
+MEA STRUCTURE:
+Anode: CP (TGP-0120) + Pt/C 20% + 30% Nafion + 1.98 mg DL/cm2 (C29)
+Catalyst loading: 0.377 mg/cm2
+Membrane: Nafion 112
+Cathode: : CP (TGP-0120) + Pt/C 20% + 30% Nafion + 1.98 mg DL/cm2 (C29)
+Catalyst loading: 0.377 mg/cm2
+
+OPERATION CONDITION:
+Ta/ Tc/ Tcell : 60 /50/ 55 C, P= 5 psig, Flow rate H2/O2: 200/200 ml/min
+
+ACTIVATION PROCEDURE:
+1) 10 min OCV
+2) 60 min at constant voltage 0.6V
+3) Cycling potential between 0.7 - 14min and 0.5V - 14 min for 10 times
+4) Constant current 0.2Acm-2 for 18hr
+Each activation set contains a repetition of the items of activation procedure. 24 sets, 24 repetition. 
+
+OPERATION CONDITION AFTER ACTIVATION:
+RH 30%: Ta/ Tc/ Tcell: 80/49/75 C
+RH 50%: Ta/ Tc/ Tcell: 80/59/75 C
+RH 100%: Ta/ Tc/ Tcell: 80/75/75 C
+P= 5psig: flow H2/O2 or air= 200/200 ml/min
+P= 15psig: flow H2/O2 or air= 300/300 ml/min
+P= 25psig: flow H2/O2 or air= 500/500 ml/min
+
+DATA DESCRIPTION:
+*All numeric-valued
+Column 1: Current density (mA/cm²)
+Column 2: Cell voltage (V)
+Column 3: Power density (mW/cm²)
+Column 4: Activation set 
+
+        OCV(mV)   MPD(mW/cm2)   R(mΩ)   NOI
+st 1    961       375           103     16
+st 2    963       460           98      16
+st 3    970       505           89      15
+st 4    977       617           85      15
+st 5    975       645           83      16
+st 6    974       650           82      16
+st 7    975       650           80      16
+st 8    982       702           81      16
+st 9    979       703           79      16
+st 10   979       709           79      16
+st 11   979       714           79      15
+st 12   987       758           77      15
+st 13   977       740           77      16
+st 14   977       737           77      15
+st 15   979       736           77      15
+st 16   986       777           75      15
+st 17   979       762           77      16
+st 18   981       768           77      16
+st 19   981       761           77      16
+st 20   990       803           77      16
+st 21   980       780           76      16
+st 22   981       781           76      16
+st 23   981       792           75      16
+st 24   996       869           73      16
+
+Total NOI : 377
+
+OCV: Open circuit voltage
+MPD: Maximum power density
+R: High frequency resistance
+NOI: Number of instances

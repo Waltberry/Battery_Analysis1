@@ -1,0 +1,57 @@
+9Activation Test MEA : Constant Voltage 0.6V (4)
+Polarization : End of Each Activation Set
+
+SOURCE:
+Electrochemistry Simulation Tools (ECSIM) Organization 
+Website: https://www.ecsim.ir
+Repository: https://github.com/ECSIM/pem-dataset1
+Data paper: https://doi.org/10.26434/chemrxiv.11902023
+Date received: 5 July 2019
+
+MEA STRUCTURE:
+Anode: C39: CP (TGP-0120) + Pt/C 20% + 30% Nafion 
+Catalyst loading: 0.42 mg/cm2
+Membrane: Nafion 112
+Cathode: A16: CP (TGP-0120) + Pt/C 20% + 30% Nafion + 1.98 mg DL/cm2 
+Catalyst loading: 0.396 mg/cm2
+
+OPERATION CONDITION:
+Ta/ Tc/ Tcell : 60 /50/ 55 C, P= 5 psig, Flow rate H2/O2: 200/200 ml/min
+
+ACTIVATION PROCEDURE:
+Constant voltage 0.6V
+Each activation set contains a repetition of the items of activation procedure. 9 sets, 9 repetition. 
+
+OPERATION CONDITION AFTER ACTIVATION:
+RH 30%: Ta/ Tc/ Tcell: 80/49/75 C
+RH 50%: Ta/ Tc/ Tcell: 80/59/75 C
+RH 100%: Ta/ Tc/ Tcell: 80/75/75 C
+P= 5psig: flow H2/O2 or air= 200/200 ml/min
+P= 15psig: flow H2/O2 or air= 300/300 ml/min
+P= 25psig: flow H2/O2 or air= 500/500 ml/min
+
+
+DATA DESCRIPTION:
+*All numeric-valued
+Column 1: Current density (mA/cm²)
+Column 2: Cell voltage (V)
+Column 3: Power density (mW/cm²)
+Column 4: Activation set 
+
+        OCV(mV)   MPD(mW/cm2)   R(mΩ)   NOI
+st 1    942       462           82      15
+st 2    978       648           76      15
+st 3    975       714           77      16
+st 4    983       900           72      16
+st 5    980       929           72      16
+st 6    982       930           74      16
+st 7    982       924           74      16
+st 8    985       1014          72      16
+st 9    980       993           77      16
+
+Total NOI : 142
+
+OCV: Open circuit voltage
+MPD: Maximum power density
+R: High frequency resistance
+NOI: Number of instances
