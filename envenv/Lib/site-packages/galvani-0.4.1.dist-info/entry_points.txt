@@ -1,0 +1,2 @@
+[console_scripts]
+res2sqlite = galvani.res2sqlite:main

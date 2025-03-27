@@ -199,10 +199,10 @@ def find_discharging_cycles(df):
         else:
             i += 1  # If not in a discharging cycle, move to the next index
     
-<<<<<<< HEAD
-    return cycles  # Return the list of all identified discharging cycles
-=======
-    return cycles  # Return the list of all identified discharging cycles
+# <<<<<<< HEAD
+#     return cycles  # Return the list of all identified discharging cycles
+# =======
+#     return cycles  # Return the list of all identified discharging cycles
 
 
 
@@ -211,4 +211,4 @@ def find_discharging_cycles(df):
 
 
 
->>>>>>> main
+# >>>>>>> main
