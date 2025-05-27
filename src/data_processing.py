@@ -198,17 +198,58 @@ def find_discharging_cycles(df):
             cycles.append(pd.DataFrame(previous_segment + current_cycle))
         else:
             i += 1  # If not in a discharging cycle, move to the next index
+            
+    return cycles  # Return the list of all identified charging cycles
     
-# <<<<<<< HEAD
-#     return cycles  # Return the list of all identified discharging cycles
-# =======
-#     return cycles  # Return the list of all identified discharging cycles
+
+
+# def get_loops_of_3_cycles(df, cycle_length=1750):
+#     """
+#     Divide the data into chunks of 3 cycles (each of size `cycle_length` rows).
+    
+#     Parameters:
+#     df (pd.DataFrame): The full dataset.
+#     cycle_length (int): Number of rows in a single cycle.
+    
+#     Returns:
+#     list of pd.DataFrame: List of DataFrames, each representing a group of 3 cycles.
+#     """
+#     group_size = 3 * cycle_length
+#     loops = []
+
+#     for start in range(0, len(df), group_size):
+#         end = min(start + group_size, len(df))
+#         loop = df.iloc[start:end]
+#         if not loop.empty:
+#             loops.append(loop)
+
+#     return loops
+
+
+def slice_df_by_index_range(df, step=1750):
+    """
+    Slice the DataFrame using index-based ranges (assumes index is numerical, like time in seconds).
+
+    Parameters:
+    df (pd.DataFrame): DataFrame with numerical index (e.g., time).
+    step (int or float): Width of each slice along the index.
+
+    Returns:
+    list of pd.DataFrame: Each element is a DataFrame sliced over [start:end] index range.
+    """
+    start = df.index.min()
+    end = df.index.max()
+    chunks = []
+
+    while start < end:
+        stop = start + step
+        chunk = df.loc[(df.index >= start) & (df.index < stop)]
+        if not chunk.empty:
+            chunks.append(chunk)
+        start = stop
+
+    return chunks
 
 
 
 
-
-
-
-
-# >>>>>>> main
