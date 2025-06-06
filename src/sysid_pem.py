@@ -28,8 +28,12 @@ def validate_inputs(n, u, y, model_type="ARX"):
         If any of the conditions are violated.
     """
     # Check if n is a list/tuple of integers
-    if not isinstance(n, (list, tuple)) or not all(isinstance(x, int) for x in n):
-        raise ValueError("n must be a list or tuple of integers.")
+
+    if not isinstance(n, (list, tuple, np.ndarray)):
+        raise ValueError("n must be a list, tuple, or numpy array.")
+    
+    if not all(isinstance(x, (int, np.int32)) for x in n):
+        raise ValueError("n must contain integers.")
     
     # Check if u and y have the same size
     if len(u) != len(y):
@@ -40,13 +44,16 @@ def validate_inputs(n, u, y, model_type="ARX"):
         if len(n) < 3:
             raise ValueError("ARX model requires (n_a, n_b, n_k).")
         na, nb, nk = n
-        nb -= 1
-        if nb > na:
-            raise ValueError("In ARX, nb must not be greater than na.")
+        #nb -= 1
+        #if nb > na:
+        #    raise ValueError("In ARX, nb must not be greater than na.")
 
     elif model_type == "Box-Jenkins":
         # nb, nc, nd, nf, nk = n
         pass
+    elif model_type == "Output-Error":
+        # nb, nc, nd, nf, nk = n
+        pass    
 
     else:
         raise ValueError(f"Unsupported model type: {model_type}.")
@@ -122,6 +129,53 @@ def theta_2_BCDF(theta, n):
         #raise ValueError('Must choose proper transfer function for noise model.')
 
     return B, C, D, F
+
+
+def theta_2_BF(theta, n):
+    """
+    Converts the parameter vector theta into coefficient arrays B, and F 
+    for the Output-Error model.
+
+    Parameters:
+    ----------
+    theta : ndarray
+        The parameter vector.
+    n : list
+        The list of model orders [nb, nf, nk].
+
+    Returns:
+    -------
+    B : ndarray
+        Coefficients for the B polynomial.
+    F : ndarray
+        Coefficients for the F polynomial.
+    """
+    
+    #validate_inputs(n, np.array([]), np.array([]),"Output-Error")
+    nb, nf, nk = n
+
+    # Extracting coefficients from theta
+    theta_b = theta[0:nb]
+    theta_f = np.concatenate(([1], theta[nb:nb + nf]))
+
+    # Ensuring dimensions of B and F are consistent with nf
+    if nf + 1 > nb:
+        B = np.concatenate((theta_b, np.zeros(nf + 1 - nb)))
+        F = theta_f
+    elif nf + 1 == nb:
+        B = theta_b
+        F = theta_f
+    else:
+        B = theta_b
+        F = np.concatenate((theta_f, np.zeros(nb-nf-1)))
+        #raise ValueError('Must choose proper transfer function for plant model.')
+
+    # Adding delay (nk) to F if nk > 0
+    if nk > 0:
+        F = np.concatenate((F, np.zeros(nk)))
+
+    return B, F
+
 
 
 def theta_2_tf_box_jenkins(theta,n,Ts):
@@ -236,6 +290,65 @@ def jac_V_bj(theta, n, y, u):
     return depsilonTot
 
 
+def jac_V_oe(theta, n, y, u):
+    """
+    Computes the Jacobian of the cost function with respect to the Box-Jenkins model parameters.
+
+    Parameters:
+    ----------
+    theta : ndarray
+        The parameter vector.
+    n : list
+        The list of model orders [nb, nc, nd, nf, nk].
+    y : ndarray
+        The output data.
+    u : ndarray
+        The input data.
+
+    Returns:
+    -------
+    depsilonTot : ndarray
+        The Jacobian matrix.
+    """
+    #validate_inputs(n, u,y,"Output-Error")
+    N = y.shape[0]
+    nb, nf, nk = n
+    
+    B, F = theta_2_BF(theta, n)
+
+    G_theta = ct.tf(B, F, True)
+  
+    
+    # Compute y_hat (predicted output) using the Box-Jenkins model
+    #tt, y_hat = ct.forced_response(G_theta, U=u) 
+    
+    
+    #e = y - y_hat # Prediction error
+   
+    # Calculate partial derivatives of epsilon with respect to B, C, D, and F
+    depsilondB = np.empty((N,nb))
+    for ii in range(nb):
+        d = ct.tf(1,np.concatenate(([1],np.zeros(ii))), True)
+        P = ct.tf(np.concatenate(([1],np.zeros(nf))),F, True)
+        #print(-d*P/H_theta)
+        tt, depsilon = ct.forced_response(-d*P,U=u)
+        depsilondB[:,ii] = depsilon
+        #dVdB[ii] = 2*(np.sum(epsilon * depsilon))
+  
+    depsilondF = np.empty((N,nf))
+    for ii in range(nf):
+        d = ct.tf(1,np.concatenate(([1],np.zeros(ii+1))), True)
+        P = ct.tf(np.concatenate(([1],np.zeros(nf+nk))),F, True)
+        tt, depsilon = ct.forced_response(d*P*G_theta,U=u)
+        depsilondF[:,ii] = depsilon
+        #dVdF[ii] = 2*(np.sum(epsilon * depsilon))
+        
+    # Combine all partial derivatives   
+    depsilonTot = np.concatenate((depsilondB, depsilondF),axis=1)
+    return depsilonTot
+
+
+
 def V_box_jenkins(theta, n, y, u):
     """
     Computes the prediction error for the Box-Jenkins model.
@@ -324,7 +437,8 @@ def V_oe(theta, n, y, u):
     tt, y_hat = ct.forced_response(G_theta, U=u) 
    
     epsilon = y - y_hat
-    return np.sum(epsilon**2)
+    #return np.sum(epsilon**2)
+    return epsilon
 
 
 def theta_2_tf_oe(theta,n, Ts):
@@ -396,7 +510,7 @@ def y_hat_oe(theta, n, y, u):
     return epsilon
 
 
-def V_arx_lin_reg(n, y, u):
+def V_arx_lin_reg(n, y, u, ra=1, rb=1):
     """
     Perform linear regression to estimate ARX model parameters.
 
@@ -446,7 +560,12 @@ def V_arx_lin_reg(n, y, u):
             phi[ii, jj + na] = u[ii + t0 - jj - nk]
 
     # Solving for theta using the normal equation (least squares solution)
-    theta = np.linalg.inv(phi.T @ phi) @ (phi.T @ y[t0:N])
+
+    vec_ra = np.array([ra**ii-1 for ii in range(na)])
+    vec_rb = np.array([rb**ii-1 for ii in range(nb)])
+    R = np.block([[np.diag(vec_ra), np.zeros((na,nb))],[np.zeros((nb,na)), np.diag(vec_rb)]])
+
+    theta = np.linalg.inv(phi.T @ phi + R) @ (phi.T @ y[t0:N])
 
     return theta
 
@@ -623,15 +742,11 @@ def FIR_estimates_GH(n, y, u):
     return g, h
 
 
-def tf_realization_GH(g,h,n):
-    
-    nb = n[0]
-    nc = n[1]
-    nd = n[2]
-    na = n[3]
-    nk = n[4]
+def tf_realization_G(g,n):
+    na = n[0]
+    nb = n[1]
+    nk = n[2]
 
-    nh = h.shape[0]-1
     ng = g.shape[0]-nk
     
     # Create Toeplitz matrix for G transfer function realization
@@ -639,7 +754,16 @@ def tf_realization_GH(g,h,n):
     Meye = np.concatenate((np.eye(nb), np.zeros((ng-nb,nb))),axis=0)
     M = np.concatenate((Meye,-Cg),axis=1)
     thetaBA = np.linalg.inv( M.T @ M ) @ (M.T @ g[nk:ng+nk] )
-    
+    return thetaBA
+
+
+def tf_realization_H(h,n):
+    nc = n[0]
+    nd = n[1]
+
+
+    nh = h.shape[0]-1
+
     # Create Toeplitz matrix for H transfer function realization
     if nc==0 and nd==0:
         thetaCD = []
@@ -648,9 +772,7 @@ def tf_realization_GH(g,h,n):
         Meye = np.concatenate((np.eye(nc), np.zeros((nh-nc,nc))),axis=0)
         M = np.concatenate((Meye,-Ch),axis=1)
         thetaCD = np.linalg.inv( M.T @ M ) @ (M.T @ h[1:nh+1] )
-
-    theta = np.concatenate((thetaBA[0:nb], thetaCD, thetaBA[nb:nb+na]))
-    return theta
+    return thetaCD
 
 
 def get_initial_estimate_box_jenkins(n,n_high_order_approx, y,u):
@@ -689,8 +811,113 @@ def get_initial_estimate_box_jenkins(n,n_high_order_approx, y,u):
 
     g_imp_est, h_imp_est = FIR_estimates_GH(n_arx,y,u)
 
-    theta_init_bj = tf_realization_GH(g_imp_est,h_imp_est,n)
+    #theta_init_bj = tf_realization_GH(g_imp_est,h_imp_est,n)
+    thetaBA = tf_realization_G(g_imp_est,[nf,nb,nk])
+    thetaCD = tf_realization_H(h_imp_est,[nc,nd])
+
+    theta_init_bj = np.concatenate((thetaBA[0:nb], thetaCD, thetaBA[nb:nb+nf]))
+
     return theta_init_bj
+
+
+def get_initial_estimate_output_error_FIR(n,n_high_order_approx, y,u, pad_impulse_response=False):
+    """
+    Generate initial estimates for Box-Jenkins model parameters using high-order FIR approximation.
+
+    Parameters:
+    ----------
+    n : tuple
+        Model structure for Box-Jenkins as (nb, nc, nd, nf, nk).
+
+    n_high_order_approx : scalar
+        High-order approximation structure for ARX model as (na_ho, nb_ho).
+
+    y : np.ndarray
+        Output data for the system.
+
+    u : np.ndarray
+        Input data for the system.
+
+    Returns:
+    -------
+    theta_init_bj : numpy.ndarray
+        Initial parameter vector estimate for Box-Jenkins model.
+    """
+    validate_inputs(n, u, y, "Output-Error") 
+    nb = n[0]
+    nf = n[1]
+    nk = n[2]
+
+    na_ho = 0
+    nb_ho = n_high_order_approx
+    n_arx = [na_ho, nb_ho, nk] 
+
+    theta = V_arx_lin_reg(n_arx,y,u)
+    g_imp_est = np.concatenate((np.zeros(nk), theta))
+    if pad_impulse_response:
+        g_imp_est_zero_padded = np.concatenate((g_imp_est[0:n_high_order_approx-1],np.zeros(n_high_order_approx)))
+        theta_init_oe = tf_realization_G(g_imp_est_zero_padded,[nf,nb,nk])
+    else:
+        theta_init_oe = tf_realization_G(g_imp_est,[nf,nb,nk])
+    return theta_init_oe
+
+
+def get_initial_estimate_output_error_ARX(n,y,u):
+    """
+    Generate initial estimates for Box-Jenkins model parameters using high-order FIR approximation.
+
+    Parameters:
+    ----------
+    n : tuple
+        Model structure for Box-Jenkins as (nb, nc, nd, nf, nk).
+
+    n_high_order_approx : scalar
+        High-order approximation structure for ARX model as (na_ho, nb_ho).
+
+    y : np.ndarray
+        Output data for the system.
+
+    u : np.ndarray
+        Input data for the system.
+
+    Returns:
+    -------
+    theta_init_bj : numpy.ndarray
+        Initial parameter vector estimate for Box-Jenkins model.
+    """
+    validate_inputs(n, u, y, "Output-Error") 
+    nb = n[0]
+    nf = n[1]
+    nk = n[2]
+
+    na = nf
+    n_arx = [na, nb, nk]
+
+    theta_arx = V_arx_lin_reg(n_arx,y,u)
+    theta_oe = np.concatenate((theta_arx[na:na+nb], theta_arx[0:na]))
+
+    return theta_oe
+
+def estimate_oe(n,n_ho,y,u):
+    
+    optimization_results = []
+    theta_init_oe_fir = get_initial_estimate_output_error_FIR(n,n_ho,y,u)
+    optimization_results.append(sp.optimize.least_squares(V_oe, theta_init_oe_fir, jac=jac_V_oe, args=(n,y,u)))
+
+    G_init, H_init = theta_2_tf_oe(theta_init_oe_fir,n,1)
+    if np.max(np.abs(G_init.poles()))>1:
+        theta_init_oe_fir2 = get_initial_estimate_output_error_FIR(n,n_ho,y,u,pad_impulse_response=True)
+        optimization_results.append(sp.optimize.least_squares(V_oe, theta_init_oe_fir2, jac=jac_V_oe, args=(n,y,u)))
+
+    theta_init_oe_arx = get_initial_estimate_output_error_ARX(n, y, u)
+    optimization_results.append(sp.optimize.least_squares(V_oe, theta_init_oe_arx, jac=jac_V_oe, args=(n,y,u)))
+
+    best_result = 0
+    for ii in range(len(optimization_results)-1):
+        if np.sum(optimization_results[ii+1].fun**2) < np.sum(optimization_results[best_result].fun**2):
+            best_result = ii+1
+
+    return optimization_results[best_result]
 
 
 def get_regression_matrix(w,t0,i1,i2):
