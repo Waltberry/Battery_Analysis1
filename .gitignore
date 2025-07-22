@@ -6,9 +6,7 @@
 **/__pycache__/
 
 # Ignore virtual environment folders
-env/
-env_analysis/
-venv/
+envenv/
 
 # Ignore Jupyter notebook checkpoints
 .ipynb_checkpoints/
@@ -22,4 +20,5 @@ venv/
 .DS_Store
 build/
 *.egg-info/
+DFN/
 
