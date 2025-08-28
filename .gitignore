@@ -8,6 +8,13 @@
 # Ignore virtual environment folders
 envenv/
 
+
+# Common virtualenvs
+venv/
+env/
+.envenv/
+
+
 # Ignore Jupyter notebook checkpoints
 .ipynb_checkpoints/
 
@@ -21,4 +28,5 @@ envenv/
 build/
 *.egg-info/
 DFN/
+SPMeT/
 
