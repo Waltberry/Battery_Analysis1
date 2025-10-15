@@ -1,0 +1,961 @@
+2025-09-04 01:44:16,649 - pyswarms.single.global_best - INFO - Optimize for 40 iters with {'c1': 1.6, 'c2': 1.6, 'w': 0.6, 'ftol': 1e-08, 'ftol_iter': 8}
+2025-09-04 01:44:28,569 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 01:44:29,736 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 01:44:40,109 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:44:40,189 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:44:42,235 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 01:44:47,922 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=898.7323897743445 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.014794921875001794) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 01:45:00,433 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=600.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.946875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 01:45:16,413 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 01:45:17,826 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 01:45:23,488 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:45:23,543 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:45:45,406 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:45:45,550 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:45:45,556 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:45:45,560 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:45:51,637 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:45:51,855 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:45:51,864 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:45:51,874 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:45:54,148 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 01:45:57,765 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:45:57,900 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:45:57,905 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:45:57,905 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:46:12,858 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2390.8348307325773 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.600000000003675) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 01:46:14,618 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:46:14,922 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:46:14,934 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:46:14,943 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:46:16,149 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:46:16,273 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:46:16,286 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:46:16,291 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:46:18,061 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 01:46:23,759 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:46:23,830 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:46:35,660 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 01:46:51,630 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:46:52,189 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:47:03,471 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:47:05,407 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:47:11,447 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:47:11,501 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:47:34,502 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2602.525513773878 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.60000000000092) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 01:47:37,870 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 01:48:00,398 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 01:48:04,475 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2494.1919814459698 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 01:48:51,508 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 01:49:02,208 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 01:49:10,969 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:49:11,636 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:50:37,586 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:50:37,711 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:50:37,717 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:50:37,723 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:50:40,210 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 01:50:41,518 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:04:06,858 - pyswarms.single.global_best - INFO - Optimize for 5 iters with {'c1': 1.6, 'c2': 1.6, 'w': 0.6, 'ftol': 1e-08, 'ftol_iter': 8}
+2025-09-04 02:04:15,574 - pyswarms.single.global_best - INFO - Optimize for 5 iters with {'c1': 1.6, 'c2': 1.6, 'w': 0.6, 'ftol': 1e-08, 'ftol_iter': 8}
+2025-09-04 02:04:18,639 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:04:42,638 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=302.840625 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.014794921875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 02:04:44,059 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:04:44,126 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:04:50,789 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:04:50,933 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:04:50,939 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:04:50,943 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:04:56,976 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:05:31,251 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=1078.4824788132614 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.60000000000735) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 02:05:54,523 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 02:06:03,435 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2.620987932643111, best pos: [-2.15028903  1.87060379  4.76289596  0.65943584  4.38921137 -1.02995258
+ -1.99136664 -1.6201804 ]
+2025-09-04 02:06:04,934 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:06:06,865 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 0.31082020900308305, best pos: [0.17108183 0.82911263 0.33867085 0.55237008 0.57855147 0.52153306
+ 0.00268806 0.98834542]
+2025-09-04 02:06:09,847 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:06:19,239 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=302.840625 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.014794921875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 02:06:20,650 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:06:20,711 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:06:25,359 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:06:25,479 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:06:25,484 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:06:25,489 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:06:30,682 - pybamm.logger - ERROR - Simulation error: Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.
+2025-09-04 02:07:01,302 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=1078.481967439958 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.60000000000735) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 02:07:26,770 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 02:16:14,865 - pyswarms.single.global_best - INFO - Optimize for 5 iters with {'c1': 1.6, 'c2': 1.6, 'w': 0.6, 'ftol': 1e-08, 'ftol_iter': 8}
+2025-09-04 02:16:16,280 - pybamm.logger - ERROR - Simulation error: Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.
+2025-09-04 02:16:30,106 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:16:45,072 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:17:09,643 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:17:09,857 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:17:17,151 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 0.8437042548152816, best pos: [-2.83280643  2.73352511  5.46529155 -2.53493048  4.99432987  0.14101828
+ -5.74022269 -4.2660577 ]
+2025-09-04 02:17:17,902 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:17:21,705 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:17:28,724 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=302.840625 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.014794921875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 02:17:29,705 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:17:43,514 - pybamm.logger - ERROR - Simulation error: Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.
+2025-09-04 02:17:44,315 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:18:00,189 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:18:28,721 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:18:29,012 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:19:22,385 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:19:22,511 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:19:22,514 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:19:22,520 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:19:24,429 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2520.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.946875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 02:19:42,258 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 02:20:10,950 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:20:12,647 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:20:12,699 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:20:18,085 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:20:19,206 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:20:21,078 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:20:34,025 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:20:34,086 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:20:37,657 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=715.621560876509 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.9468750000000574) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 02:20:53,632 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:20:54,052 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:20:54,982 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:20:55,020 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:21:05,469 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2430.3113585128494 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.4734375000000018) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 02:21:15,336 - pybamm.logger - ERROR - Simulation error: Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.
+2025-09-04 02:21:16,391 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:21:34,038 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:21:44,504 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:21:53,543 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:21:53,570 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:21:57,623 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:22:10,387 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:22:10,422 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:22:13,652 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=723.306973247056 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.001849365234375056) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 02:22:17,549 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:22:27,326 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:22:27,851 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:23:12,017 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=735.15 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.23671875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 02:23:12,975 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:23:13,025 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:23:26,769 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=195.29901115088256 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.600000000001835) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 02:23:40,858 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:23:57,550 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:23:57,592 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:24:31,835 - pybamm.logger - ERROR - Simulation error: Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.
+2025-09-04 02:25:56,615 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:26:07,568 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=715.8304196518111 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.9468750000001148) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 02:26:30,655 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:26:47,322 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:26:49,093 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:27:02,392 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:27:03,622 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:27:14,378 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2406.917452824799 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.9468750000000287) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 02:27:35,992 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2350.0176062735004 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.118359375) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 02:28:06,261 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:28:16,551 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:28:16,787 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:28:22,526 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:28:36,837 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 02:29:44,199 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:29:44,326 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:29:44,329 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:29:44,333 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:29:45,040 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:29:45,381 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:29:45,385 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:29:45,390 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 02:44:17,649 - pybamm.logger - ERROR - Simulation error: Could not find consistent states: Could not find acceptable solution: solver returned NaNs or Infs
+2025-09-04 02:45:02,333 - pyswarms.single.global_best - INFO - Optimize for 5 iters with {'c1': 1.6, 'c2': 1.6, 'w': 0.6, 'ftol': 1e-08, 'ftol_iter': 8}
+2025-09-04 02:46:55,088 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 0.31082025564586613, best pos: [0.17108183 0.82911263 0.33867085 0.55237008 0.57855147 0.52153306
+ 0.00268806 0.98834542]
+2025-09-04 06:14:38,242 - pyswarms.single.global_best - INFO - Optimize for 40 iters with {'c1': 1.6, 'c2': 1.6, 'w': 0.6, 'ftol': 1e-08, 'ftol_iter': 8}
+2025-09-04 07:17:47,595 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 0.3032152405481113, best pos: [0.39843423 0.511698   0.00675419 0.11720718 0.51430626 0.91001607
+ 0.65834785 0.51499163]
+2025-09-04 08:19:30,131 - pyswarms.single.global_best - INFO - Optimize for 40 iters with {'c1': 1.6, 'c2': 1.6, 'w': 0.6, 'ftol': 1e-08, 'ftol_iter': 8}
+2025-09-04 08:19:47,891 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:19:50,413 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:20:10,612 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:20:10,709 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:20:13,136 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:20:21,425 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=898.7323897743445 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.014794921875001794) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:20:44,357 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=600.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.946875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:21:10,603 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:21:12,908 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:21:22,750 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:21:22,861 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:21:56,177 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:21:56,382 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:21:56,390 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:21:56,396 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:05,229 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:05,465 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:05,475 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:05,483 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:08,109 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:22:14,226 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:14,431 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:14,439 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:14,448 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:27,845 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2390.8348307325773 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.600000000003675) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:22:29,565 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:29,786 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:29,793 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:29,800 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:31,522 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:31,737 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:31,744 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:31,749 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:33,922 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:22:43,273 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:43,342 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:22:59,954 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:23:26,190 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:23:27,073 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:23:43,859 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:23:45,320 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:23:54,764 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:23:54,870 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:24:20,463 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2602.525513773878 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.60000000000092) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:24:23,491 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:24:48,848 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:24:53,907 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2494.1919814459698 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:26:05,501 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:26:23,249 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:26:35,790 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:26:36,842 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:28:52,364 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:28:52,579 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:28:52,588 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:28:52,597 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:28:56,528 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:28:58,338 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:29:52,226 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=405.45 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.23671875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:30:01,927 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:30:02,724 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:31:24,480 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:31:25,276 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:33:45,866 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=330.3 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.4734375) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:34:52,315 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:35:09,742 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:35:11,853 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:35:14,310 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:35:14,409 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:35:23,273 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:35:24,607 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:35:27,012 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:35:35,586 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:35:36,661 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:35:39,156 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:35:39,776 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:36:18,920 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:36:19,012 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:37:01,019 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:37:01,306 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:37:01,311 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:37:01,318 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:37:23,838 - pybamm.logger - ERROR - Simulation error: Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_ERR_FAIL". Consult IDAS documentation.
+2025-09-04 08:37:33,204 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:37:33,421 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:37:33,428 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:37:33,435 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:38:09,209 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:38:14,420 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:39:03,440 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:39:20,055 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2674.6963557560666 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.60000000000046) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:39:53,074 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:39:53,401 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:40:02,233 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2400.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.946875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:41:04,289 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:41:04,333 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:41:13,720 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:42:24,655 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=1758.9787498781939 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.4734375000000036) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:42:26,594 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:42:27,118 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:43:37,689 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:44:43,821 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=452.19375 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.02958984375) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:44:54,403 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:45:54,800 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:45:55,506 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:46:03,596 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=1875.15 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.23671875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:46:12,924 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:46:20,490 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=1116.1564151629682 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.23671875000001436) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:46:32,585 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:46:32,703 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:46:32,709 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:46:32,709 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:47:19,708 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:47:19,763 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:47:32,831 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:47:32,953 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:47:32,964 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:47:32,969 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:48:04,402 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:48:29,366 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:48:30,433 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:48:30,473 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:49:01,785 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:49:01,880 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:49:01,884 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:49:01,888 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:49:06,078 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=3656.985853129849 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.600000000003675) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:49:20,097 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:49:20,211 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:49:20,217 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:49:20,223 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:49:26,191 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:49:43,992 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:50:01,249 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:50:05,529 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:50:05,603 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:50:05,606 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:50:05,609 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:50:13,527 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2182.725 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.118359375) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:50:14,399 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:50:15,189 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:50:15,349 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:50:15,354 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:50:15,359 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:50:28,449 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=1546.74697119526 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.60000000000023) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:50:44,453 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:50:44,535 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:50:44,539 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:50:44,543 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:50:45,544 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=300.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.946875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:50:56,797 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:50:57,711 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:50:57,984 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:50:59,099 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:51:16,426 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:51:16,470 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:51:20,671 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:51:52,944 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:51:53,453 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:52:08,976 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:52:09,527 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:52:18,100 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:52:19,358 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:53:40,767 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:53:44,809 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:53:44,870 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:54:03,650 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 08:54:05,234 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:54:05,288 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:54:26,730 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=277.875 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.118359375) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:55:10,850 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=830.2172183055499 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_ERR_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.600000000003675) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:56:04,396 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2870.504837836734 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.4734375000000036) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:56:07,699 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=5854.1932149708355 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.23671875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:56:16,393 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=547.575 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.118359375) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 08:57:06,186 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:57:06,601 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:57:17,843 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:57:17,882 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:57:18,683 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:57:18,868 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:57:31,544 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:57:31,947 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:57:36,592 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:57:36,675 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:57:36,679 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:57:36,683 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:57:37,160 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:57:37,287 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:57:37,290 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:57:37,294 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:58:33,680 - pybamm.logger - ERROR - Simulation error: Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_ERR_FAIL". Consult IDAS documentation.
+2025-09-04 08:59:14,821 - pybamm.logger - ERROR - Simulation error: Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.
+2025-09-04 08:59:19,986 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:59:20,069 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:59:20,074 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 08:59:20,077 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:00:16,801 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=276.3471509497314 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.60000000000092) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:00:27,240 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:00:27,284 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:01:09,269 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=642.7094090358456 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.60000000000046) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:01:22,717 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:01:30,570 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:01:30,615 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:01:57,375 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=713.9626189645603 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.9468750000001148) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:02:27,074 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=780.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.946875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:04:13,014 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:04:23,228 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:05:26,996 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:05:28,112 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:06:14,535 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:06:14,592 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:06:17,315 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=930.7899150896919 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.9468750000001148) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:06:44,567 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:06:44,656 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:06:50,441 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:06:50,500 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:07:08,637 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2160.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_REP_RES_ERR". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.946875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:08:13,065 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:08:13,149 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:08:13,154 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:08:13,158 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:09:06,036 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:09:36,724 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:09:37,270 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:09:41,546 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:10:00,318 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:11:02,743 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:11:02,954 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:11:05,891 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:11:54,677 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:12:10,573 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:12:10,619 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:12:52,396 - pybamm.logger - ERROR - Simulation error: Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_REP_RES_ERR". Consult IDAS documentation.
+2025-09-04 09:13:12,512 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:13:42,168 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:14:26,500 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2400.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.946875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:14:46,298 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:15:17,353 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:15:25,802 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:15:36,496 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:15:36,583 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:15:36,587 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:15:36,587 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:16:01,675 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:16:01,729 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:16:12,144 - pybamm.logger - ERROR - Simulation error: Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.
+2025-09-04 09:16:35,985 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:17:27,786 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:17:28,381 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:17:51,799 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2100.020182766733 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.60000000000092) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:18:10,055 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:18:24,623 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=1050.3 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.4734375) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:18:39,295 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:18:39,387 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:18:39,393 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:18:39,398 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:18:44,130 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:20:32,772 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:20:32,809 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:21:05,935 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2220.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.946875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:21:18,870 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:21:23,485 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:21:28,660 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 0.32408826451723277, best pos: [ 0.20562548  2.68415381 -1.85611082  1.69228547  0.45218699  0.07307588
+ -2.3912002  -4.67945225]
+2025-09-04 09:21:35,566 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:21:36,523 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:21:44,846 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:21:44,913 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:21:46,172 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:21:49,991 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=898.7320601924243 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.014794921875000056) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:21:58,604 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=600.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.946875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:22:08,095 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:22:08,875 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:22:12,480 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:12,506 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:26,923 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:27,011 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:27,016 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:27,021 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:30,953 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:31,040 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:31,043 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:31,047 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:31,947 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:22:34,418 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:34,499 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:34,503 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:34,503 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:39,823 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2390.8342775121573 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:22:40,634 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:40,728 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:40,732 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:40,736 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:41,330 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:41,433 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:41,436 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:41,439 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:42,348 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:22:45,645 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:45,679 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:22:53,556 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:23:05,429 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:23:05,844 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:23:15,487 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:23:16,358 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:23:23,062 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:23:23,161 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:23:42,117 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2602.526005877824 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.60000000000046) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:23:43,956 - pybamm.logger - ERROR - Simulation error: Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.
+2025-09-04 09:23:59,367 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:24:02,358 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2494.190862651632 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.60000000000735) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:24:35,611 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:24:44,796 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:24:49,531 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:24:49,940 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:25:54,324 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:25:54,404 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:25:54,410 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:25:54,413 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:25:56,210 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:25:57,198 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:26:23,208 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=405.45 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.23671875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:26:27,448 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:26:27,928 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:27:06,715 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:27:07,157 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:28:14,875 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=330.3 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.4734375) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:28:45,470 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:28:52,878 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:28:53,993 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:28:55,190 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:28:55,226 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:28:59,272 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:28:59,810 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:29:00,914 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:29:04,753 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:29:05,160 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:29:06,126 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:29:06,371 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:29:23,375 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:29:23,439 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:29:40,846 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:29:40,923 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:29:40,926 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:29:40,930 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:29:49,445 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=5350.113249179316 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.9468750000000287) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:29:52,666 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:29:52,743 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:29:52,747 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:29:52,749 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:30:04,872 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:30:06,570 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:30:26,129 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:30:35,843 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2674.696662335189 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.600000000003675) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:31:09,121 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:31:09,421 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:31:21,060 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2400.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.946875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:32:22,162 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:32:22,236 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:32:34,489 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:33:40,197 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=1758.976109575332 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.4734375) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:33:41,606 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:33:41,991 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:34:46,537 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:35:38,235 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=452.19375 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.02958984375) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:35:45,129 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:36:25,164 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:36:25,526 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:36:29,858 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=1875.15 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.23671875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:36:35,930 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:36:41,510 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=1116.156624656888 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.2367187500000287) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:36:55,147 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:36:55,242 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:36:55,248 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:36:55,255 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:37:27,133 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:37:27,160 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:37:36,238 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:37:36,323 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:37:36,329 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:37:36,336 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:37:58,548 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:38:16,660 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:38:17,816 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:38:17,847 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:38:49,801 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:38:49,934 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:38:49,941 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:38:49,946 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:38:54,299 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=3656.986041998623 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:39:07,512 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:39:07,585 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:39:07,596 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:39:07,600 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:39:12,152 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:39:29,826 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:39:45,591 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:39:48,976 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:39:49,051 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:39:49,056 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:39:49,057 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:39:56,380 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2182.725 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.118359375) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:39:57,265 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:39:58,019 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:39:58,122 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:39:58,126 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:39:58,131 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:40:08,443 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=1546.7468328950683 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.600000000003675) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:40:22,612 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:40:22,769 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:40:22,773 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:40:22,777 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:40:23,681 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=300.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.946875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:40:27,603 - pybamm.logger - ERROR - Simulation error: Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.
+2025-09-04 09:40:34,089 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:40:35,492 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:40:35,829 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:40:36,549 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:40:51,028 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:40:51,064 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:40:54,522 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:41:18,730 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:41:19,143 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:41:29,686 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:41:30,008 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:41:37,819 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:41:38,747 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:42:28,550 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:42:31,778 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:42:31,808 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:42:47,095 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:42:48,036 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:42:48,074 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:43:13,022 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=277.875 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.118359375) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:43:44,616 - pybamm.logger - ERROR - Simulation error: Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.
+2025-09-04 09:43:51,599 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=830.2179588107674 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_ERR_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.600000000001835) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:44:42,120 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2870.5046066805194 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.4734375000000574) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:44:45,061 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=5854.193203306221 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.23671875000001436) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:44:51,702 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=547.575 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.118359375) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:45:31,454 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:45:31,769 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:45:43,592 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:45:43,633 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:45:44,666 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:45:44,936 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:45:55,699 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:45:56,175 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:45:59,694 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:45:59,793 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:45:59,799 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:45:59,803 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:46:00,444 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:46:00,538 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:46:00,542 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:46:00,548 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:47:13,538 - pybamm.logger - ERROR - Simulation error: Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.
+2025-09-04 09:47:16,621 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:47:16,753 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:47:16,760 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:47:16,761 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:47:25,393 - pybamm.logger - ERROR - Simulation error: Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.
+2025-09-04 09:48:02,806 - pybamm.logger - ERROR - Simulation error: Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.
+2025-09-04 09:48:08,996 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:48:09,041 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:48:55,601 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=642.7096851889854 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.600000000003675) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:49:30,445 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:49:45,991 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:49:46,055 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:50:22,744 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=713.9626345234931 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.9468750000000143) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:50:48,635 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=780.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.946875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:51:31,309 - pybamm.logger - ERROR - Simulation error: Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.
+2025-09-04 09:52:08,570 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:52:16,937 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:52:27,878 - pybamm.logger - ERROR - Simulation error: Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.
+2025-09-04 09:53:07,337 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:53:08,143 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:53:49,677 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:53:49,799 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:53:52,481 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=930.7897901839294 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.9468750000000574) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:54:15,609 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:54:15,688 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:54:19,222 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:54:19,303 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:54:28,220 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2160.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.946875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 09:55:21,969 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:55:22,049 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:55:22,054 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:55:22,059 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:56:15,909 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:56:45,086 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:56:45,522 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:56:49,668 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:57:11,536 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:58:18,484 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:58:18,648 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:58:21,786 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:59:04,517 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 09:59:22,582 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 09:59:22,658 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 10:00:15,255 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 10:00:48,770 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 10:01:29,539 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2400.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.946875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 10:01:47,313 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 10:02:17,251 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 10:02:26,625 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=0.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 10:02:39,118 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 10:02:39,266 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 10:02:39,274 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 10:02:39,279 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 10:03:02,136 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 10:03:02,165 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 10:03:33,612 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 10:04:17,315 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 10:04:17,586 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 10:04:35,047 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2100.021082229396 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDACalcIC returned "IDA_LINESEARCH_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=60.6) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 10:04:53,265 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 10:05:05,387 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=1050.3 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.4734375) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 10:05:20,712 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 10:05:20,791 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 10:05:20,791 - pybamm.logger - WARNING - Step 'Discharge at 5.0 A until 2.7 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 10:05:20,791 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 10:05:24,970 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 10:07:31,177 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 10:07:31,243 - pybamm.logger - WARNING - Step 'Charge at 5.0 A until 4.2 V' is infeasible at initial conditions, but skip_ok is True. Skipping step.
+2025-09-04 10:07:56,343 - pybamm.logger - ERROR - Simulation error: Maximum number of decreased steps occurred at t=2220.0 (final SolverError: 'Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:1432:
+Error in Function::call for 'F' [IdasInterface] at .../casadi/core/function.cpp:361:
+.../casadi/interfaces/sundials/idas_interface.cpp:596: IDASolve returned "IDA_CONV_FAIL". Consult IDAS documentation.'). For a full solution try reducing dt_max (currently, dt_max=0.946875) and/or reducing the size of the time steps or period of the experiment. Set `return_solution_if_failed_early=True` to return the solution object up to the point where failure occured.
+2025-09-04 10:08:15,551 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
+2025-09-04 10:08:20,726 - pybamm.logger - ERROR - Simulation error: Could not determine which event was triggered (possibly due to NaNs)
