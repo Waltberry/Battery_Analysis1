@@ -20,7 +20,7 @@ def load_mpr(file_name):
     
     return xls
 
-def load_excel(file_name, sheet_name=None):
+def load_excel(file_name):
     """
     Load an Excel file from the 'Flow Battery Project' data folder.
 
@@ -43,8 +43,8 @@ def load_excel(file_name, sheet_name=None):
     file_path = os.path.join(data_folder, file_name)
     
     # Load the Excel file
-    # xls = pd.ExcelFile(file_path)
-    xls = pd.read_excel(file_path, sheet_name = sheet_name)
+    xls = pd.ExcelFile(file_path)
+    # xls = pd.read_excel(file_path, sheet_name = sheet_name)
     
     return xls
 
