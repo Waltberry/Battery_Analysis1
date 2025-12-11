@@ -3,7 +3,13 @@ import pandas as pd
 import re
 from galvani import BioLogic
 
+try:
+    import PSData
+except ImportError:
+    PSData = None  # we'll handle this gracefully later
+
 TIME_COLUMN_NAME = 'Time (HH:mm:ss.SSS)'
+
 
 def load_mpr(file_name):
     # Get the absolute path of the project's root directory
@@ -86,66 +92,136 @@ def load_txt(file_name):
 
 
 
-def load_csv_files(file_names, sub_folder, project_folder, data='data'):
+def load_csv_files(file_names, sub_folder: str = '', data: str = 'data'):
     """
-    Load and process multiple CSV files from the specified subfolder within the 'Hydrogen Project' data folder.
+    Load multiple CSV files from the specified subfolder within the
+    'Flow Battery Project' data folder.
 
-    This function constructs the full file path for each CSV file in the specified
-    subfolder, reads the files into DataFrames, processes them (e.g., renaming columns, 
-    cleaning data), and returns a dictionary of processed DataFrames.
+    Parameters
+    ----------
+    file_names : list of str
+        CSV file names to load (e.g. ['1.csv']).
+    sub_folder : str, optional
+        Optional subfolder inside the data folder, e.g. '', 'cycle1', 'raw'.
+    data : str, optional
+        Name of the data folder (default: 'data').
 
-    Parameters:
-    file_names (list): List of CSV file names to load.
-    sub_folder (str): Subfolder within the 'Hydrogen Project' data folder where the files are located.
-
-    Returns:
-    dict: Dictionary with file names as keys (processed) and DataFrames as values.
+    Returns
+    -------
+    dict[str, pd.DataFrame]
+        Dictionary mapping a cleaned file key to the loaded DataFrame.
     """
-    # Get the absolute path of the project's root directory
-    project_root = os.path.dirname(os.path.dirname(__file__))
-    
-    # Construct the path to the data folder
-    data_folder = os.path.join(project_root, project_folder, data, sub_folder)
-    
-    # Dictionary to hold DataFrames
+    project_root = os.path.dirname(os.path.dirname(__file__))  # .../Battery_Analysis1
+
+    # Base: .../Battery_Analysis1/Flow Battery Project/data
+    data_folder = os.path.join(project_root, 'Flow Battery Project', data)
+
+    # Optional deeper subfolder
+    if sub_folder:
+        data_folder = os.path.join(data_folder, sub_folder)
+
     dataframes = {}
 
-    # Function to clean and rename the DataFrame columns
-    def process_dataframe(df, file_name):
-        # Rename the columns
-        df.columns = [TIME_COLUMN_NAME, 'Channel', 'CH', 'unnamed2', 'V', 'unnamed3', 'A', 'unnamed4']
-        # Remove the brackets in 'Channel' and TIME_COLUMN_NAME columns
-        df['Channel'] = df['Channel'].str.strip('[]')
-        df[TIME_COLUMN_NAME] = df[TIME_COLUMN_NAME].str.strip('()')
-        # Discard the unnecessary columns
-        df = df.drop(columns=['unnamed2', 'unnamed3', 'unnamed4'])
-        # Below code is for identifying the 'Data Source' from the file name (optional)
-        # Extract the relevant part of the file name for 'Data Source'
-        # match = re.search(r'_N11507060127_(.*?)_', file_name)
-        # if match:
-        #     middle_part = match.group(1)
-        # else:
-        #     middle_part = "rapid_polarization"
-        # middle_part = re.search(r'Polarization_(.*?) mpm_corr', file_name).group(1)
-        # middle_part = re.search(r'Rapid (.*)', file_name).group()
-        # df['Data Source'] = middle_part
-        return df
-
-    # Read each file into a DataFrame with error handling and process them
     for file in file_names:
         try:
-            # Construct the full file path
             file_path = os.path.join(data_folder, file)
-            # Extract a unique key for the dictionary
-            key = file.replace(' ', '_').replace('.', '_').replace('(', '').replace(')', '')
-            # Attempt to read the CSV file starting from the 5th row
-            df = pd.read_csv(file_path, skiprows=5)
-            # Process the DataFrame
-            dataframes[key] = process_dataframe(df, file)
-            # print(f"Successfully read and processed {file}")
+
+            if not os.path.exists(file_path):
+                raise FileNotFoundError(f"File not found: {file_path}")
+
+            # Adjust skiprows/header depending on how your CSV looks.
+            # If it has a normal header row, remove skiprows or set skiprows=0.
+            df = pd.read_csv(file_path)  # or pd.read_csv(file_path, skiprows=5)
+
+            key = (
+                file.replace(' ', '_')
+                    .replace('.', '_')
+                    .replace('(', '')
+                    .replace(')', '')
+            )
+            dataframes[key] = df
+
         except pd.errors.ParserError as e:
             print(f"Error reading {file}: {e}")
         except ValueError as e:
             print(f"Error processing {file}: {e}")
 
     return dataframes
+
+def load_csv(file_name: str, sub_folder: str = '', data: str = 'data') -> pd.DataFrame:
+    """Convenience wrapper to load a single CSV file."""
+    dfs = load_csv_files([file_name], sub_folder=sub_folder, data=data)
+    key = (
+        file_name.replace(' ', '_')
+                 .replace('.', '_')
+                 .replace('(', '')
+                 .replace(')', '')
+    )
+    return dfs[key]
+
+
+def load_psdata_as_table(file_name: str) -> pd.DataFrame:
+    """
+    Fallback: try to load .psdata as a plain text table for quick inspection.
+    This may or may not work depending on format, but it's useful to peek.
+
+    Returns a raw DataFrame.
+    """
+    project_root = os.path.dirname(os.path.dirname(__file__))
+    data_folder = os.path.join(project_root, 'Flow Battery Project', 'data')
+    file_path = os.path.join(data_folder, file_name)
+    file_path = os.path.normpath(file_path)
+
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"The file {file_path} does not exist.")
+
+    # Try whitespace-delimited first
+    df = pd.read_csv(
+        file_path,
+        sep=r'\s+',
+        comment='#',
+        header=None,
+        engine='python'
+    )
+    return df
+
+
+
+# def load_psdata(file_name: str):
+#     """
+#     Load a .psdata file from the 'Flow Battery Project' data folder.
+
+#     This is a generic loader: it reads the file as a whitespace-separated
+#     table and returns a raw pandas DataFrame. You can inspect the first
+#     few rows in a notebook and then decide how to rename columns, handle
+#     units rows, etc.
+
+#     Parameters
+#     ----------
+#     file_name : str
+#         Name of the .psdata file (e.g. '2.psdata').
+
+#     Returns
+#     -------
+#     pd.DataFrame
+#         Raw data from the file.
+#     """
+#     project_root = os.path.dirname(os.path.dirname(__file__))
+#     data_folder = os.path.join(project_root, 'Flow Battery Project', 'data')
+#     file_path = os.path.join(data_folder, file_name)
+
+#     file_path = os.path.normpath(file_path)
+
+#     if not os.path.exists(file_path):
+#         raise FileNotFoundError(f"The file {file_path} does not exist.")
+
+#     # First attempt: whitespace-separated, ignore comment lines
+#     df = pd.read_csv(
+#         file_path,
+#         sep=r'\s+',
+#         comment='#',
+#         header=None,   # assume no header; you’ll inspect and adjust
+#         engine='python'
+#     )
+
+#     return df

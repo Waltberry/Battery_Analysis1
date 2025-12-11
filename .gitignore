@@ -22,6 +22,8 @@ env/
 .dist/
 .vscode/
 .pytest_cache
+jax-sysid/
+
 
 # Other ignores
 .DS_Store
