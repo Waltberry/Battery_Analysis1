@@ -1,0 +1,8 @@
+{
+  "trial_start": 4,
+  "trial_end_exclusive": 5,
+  "total_configs": 16,
+  "runs_completed": 9,
+  "best_mse": 0.0012513645053787881,
+  "best_post_max": 0.13902312342491197
+}

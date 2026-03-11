@@ -1,0 +1,9 @@
+{
+  "mode": "locked",
+  "trial_start": 47,
+  "trial_end_exclusive": 48,
+  "total_configs": 1,
+  "runs_completed": 1,
+  "best_mse": 5.9712270051985445e-09,
+  "best_post_max": 0.00046284456630374393
+}

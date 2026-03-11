@@ -1,0 +1,9 @@
+{
+  "mode": "free",
+  "trial_start": 32,
+  "trial_end_exclusive": 33,
+  "total_configs": 16,
+  "runs_completed": 12,
+  "best_mse": 5.814315372223538e-10,
+  "best_post_max": 0.00014033118944922762
+}
